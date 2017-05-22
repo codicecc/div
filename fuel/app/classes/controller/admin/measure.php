@@ -2,8 +2,48 @@
 class Controller_Admin_Measure extends Controller_Admin
 {
 
-	public function action_index()
-	{
+	public function action_index(){
+		
+		if (Input::method() == 'POST'){
+			// File uploaded?
+			if (!empty($_FILES)){
+				// Custom configuration for this upload
+				$config = array(
+						'path' => DOCROOT.'files',
+						'randomize' => true,
+						'ext_whitelist' => array('csv'),
+				);
+				// process the uploaded files in $_FILES
+				Upload::process($config);
+				
+				// if there are any valid files
+				if (Upload::is_valid()){
+					//Debug::dump(Upload::get_files()[0]["file"]);
+					foreach(Upload::get_files() as $file){
+						$file_content = File::read(Upload::get_files()[0]["file"], true);
+						$a_file_content=(Format::forge($file_content, 'csv')->to_array());
+					}
+					
+					echo $a_file_content[1]["test1"];
+					//Debug::dump($file_content);
+						// save them according to the config
+						//Upload::save();
+				
+						// call a model method to update the database
+						//Model_Uploads::add(Upload::get_files());
+				}
+				
+				//Debug::dump(Upload::get_errors());
+				// and process any errors
+				foreach (Upload::get_errors() as $file){
+						// $file is an array with all file information,
+						// $file['errors'] contains an array of all error occurred
+						// each array element is an an array containing 'error' and 'message'
+				}
+				//die();
+			}
+		}
+		
 		$data['measures'] = Model_Measure::find('all');
 		$this->template->title = "Measures";
 		$this->template->content = View::forge('admin/measure/index', $data);

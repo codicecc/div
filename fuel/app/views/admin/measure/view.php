@@ -1,17 +1,16 @@
-<h2>Viewing #<?php echo $measure->id; ?></h2>
+<h2><?php echo __('admin.Viewing');?> #<?php echo $measure->id; ?></h2>
 
 <p>
-	<strong>Student id:</strong>
-	<?php echo $measure->student_id; ?></p>
+	<strong><?php echo __('admin.Student');?>:</strong>
+	<?php echo $measure->student->name; ?></p>
 <p>
-	<strong>Body part id:</strong>
-	<?php echo $measure->body_part_id; ?></p>
+	<strong><?php echo __('admin.BodyPart');?>:</strong>
+	<?php echo $measure->body_part->name; ?></p>
 <p>
 	<strong>Value:</strong>
-	<?php echo $measure->value; ?></p>
+	<?php echo $measure->value; ?> cm</p>
 <p>
 	<strong>Note:</strong>
 	<?php echo $measure->note; ?></p>
 
-<?php echo Html::anchor('admin/measure/edit/'.$measure->id, 'Edit'); ?> |
-<?php echo Html::anchor('admin/measure', 'Back'); ?>
+<?php echo render('admin/measure/_actions'); ?>

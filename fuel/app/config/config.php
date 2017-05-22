@@ -357,7 +357,7 @@ return array(
 								'text'   => 'Measure',
 								'rights' => 'measure'
 						 ),
-						 '/admin/body_part' => array(
+						 '/admin/body/part' => array(
 								'text'   => 'BodyPart',
 								'rights' => 'body_part'
 						 ),

@@ -15,7 +15,7 @@
 <?php foreach ($measures as $item): ?>		<tr>
 
 			<td><?php echo $item->student->name; ?></td>
-			<td><?php echo $item->body_part->name\; ?></td>
+			<td><?php echo $item->body_part->name; ?></td>
 			<td><?php echo $item->value; ?></td>
 			<td><?php echo $item->note; ?></td>
 			<td>
@@ -36,5 +36,6 @@
 <?php if(Auth::has_access(Request::active()->controller.'.create')):?>
 	<?php echo Html::anchor('admin/measure/create', __('admin.AddNew'), array('class' => 'btn btn-success')); ?>
 <?php endif;?>
-
 </p>
+
+<?php echo render('admin/measure/_processCSVFile'); ?>
