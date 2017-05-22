@@ -1,7 +1,5 @@
-<h2>Editing School</h2>
+<h2><?php echo __('admin.EditingSchool');?></h2>
 <br>
 
 <?php echo render('admin/school/_form'); ?>
-<p>
-	<?php echo Html::anchor('admin/school/view/'.$school->id, 'View'); ?> |
-	<?php echo Html::anchor('admin/school', 'Back'); ?></p>
+<?php echo render('admin/student/_actions'); ?>	

@@ -1,11 +1,10 @@
-<h2>Viewing #<?php echo $school->id; ?></h2>
+<h2><?php echo __('admin.Viewing');?> #<?php echo $school->id; ?></h2>
 
 <p>
-	<strong>Name:</strong>
+	<strong><?php echo __('admin.Name');?>:</strong>
 	<?php echo $school->name; ?></p>
 <p>
-	<strong>Note:</strong>
+	<strong><?php echo __('admin.Note');?>:</strong>
 	<?php echo $school->note; ?></p>
 
-<?php echo Html::anchor('admin/school/edit/'.$school->id, 'Edit'); ?> |
-<?php echo Html::anchor('admin/school', 'Back'); ?>
+<?php echo render('admin/school/_actions'); ?>

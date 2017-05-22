@@ -3,11 +3,14 @@ return array(
     'Student' => 'Studente',
     'School' => 'Scuola',
     'ListingStudents' => 'Lista Studenti',
+    'ListingSchools' => 'Lista Scuole',
     'Note' => 'Note',
     'StudentList' => 'Lista Studenti',
+    'SchoolList' => 'Lista Scuole',
     'EditingStudent' => 'Modifica Studente',
+    'EditingSchool' => 'Modifica Scuola',
     'NewStudent' => 'Nuovo Studente',
-    
+    'NewSchool' => 'Nuova Scuola',    
         
     'Help' => 'Guida',
 		'Info' => 'Informazioni',

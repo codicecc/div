@@ -1,7 +1,6 @@
-<h2>New School</h2>
+<h2><?php echo __('admin.NewSchool');?></h2>
 <br>
 
 <?php echo render('admin/school/_form'); ?>
 
-
-<p><?php echo Html::anchor('admin/school', 'Back'); ?></p>
+<?php echo render('admin/school/_actions'); ?>	

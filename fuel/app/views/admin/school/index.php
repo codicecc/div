@@ -1,11 +1,11 @@
-<h2>Listing Schools</h2>
+<h2><?php echo __('admin.ListingSchools');?></h2>
 <br>
 <?php if ($schools): ?>
 <table class="table table-striped">
 	<thead>
 		<tr>
-			<th>Name</th>
-			<th>Note</th>
+			<th><?php echo __('admin.Name');?></th>
+			<th><?php echo __('admin.Note');?></th>
 			<th></th>
 		</tr>
 	</thead>
@@ -15,10 +15,9 @@
 			<td><?php echo $item->name; ?></td>
 			<td><?php echo $item->note; ?></td>
 			<td>
-				<?php echo Html::anchor('admin/school/view/'.$item->id, 'View'); ?> |
-				<?php echo Html::anchor('admin/school/edit/'.$item->id, 'Edit'); ?> |
-				<?php echo Html::anchor('admin/school/delete/'.$item->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>
-
+				<?php
+					echo Utilities::adminActions($item,Request::active()->route->segments[1],array(array(__('admin.View'),'view'),array(__('admin.Edit'),'edit'),array(__('admin.Delete'),'delete'),));
+				?>
 			</td>
 		</tr>
 <?php endforeach; ?>	</tbody>
@@ -27,7 +26,9 @@
 <?php else: ?>
 <p>No Schools.</p>
 
-<?php endif; ?><p>
-	<?php echo Html::anchor('admin/school/create', 'Add new School', array('class' => 'btn btn-success')); ?>
-
+<?php endif; ?>
+<p>
+<?php if(Auth::has_access(Request::active()->controller.'.create')):?>
+	<?php echo Html::anchor('admin/school/create', __('admin.AddNew'), array('class' => 'btn btn-success')); ?>
+<?php endif;?>
 </p>
