@@ -1,13 +1,13 @@
 <?php
-class Model_Student extends \Orm\Model{
+class Model_Measure extends \Orm\Model{
 	
-	protected static $_belongs_to = array('school');
-	protected static $_has_many = array('measures');
+	protected static $_belongs_to = array('student','body_part');
 	
 	protected static $_properties = array(
 		'id',
-		'name',
-		'school_id',
+		'student_id',
+		'body_part_id',
+		'value',
 		'note',
 		'created_at',
 		'updated_at',
@@ -27,9 +27,11 @@ class Model_Student extends \Orm\Model{
 	public static function validate($factory)
 	{
 		$val = Validation::forge($factory);
-		$val->add_field('name', 'Name', 'required|max_length[255]');
-		$val->add_field('school_id', 'School Id', 'required|valid_string[numeric]');
+		$val->add_field('student_id', 'Student Id', 'required|valid_string[numeric]');
+		$val->add_field('body_part_id', 'Body Part Id', 'required|valid_string[numeric]');
+		$val->add_field('value', 'Value', 'required|max_length[255]');
 		//$val->add_field('note', 'Note', 'required');
+
 		return $val;
 	}
 

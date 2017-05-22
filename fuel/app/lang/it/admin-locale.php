@@ -1,15 +1,31 @@
 <?php
 return array(
+    'Measure' => 'Misura',
+    'ListingMeasures' => 'Lista Misure',
+    'MeasureList' => 'Lista Misure',
+    'EditingMeasure' => 'Modifica Misura',
+    'NewMeasure' => 'Nuova Misura',
+    'NoMeasures' => 'Nulla qui',    
+    'Value' => 'Valore in cm',
+
     'Student' => 'Studente',
-    'School' => 'Scuola',
     'ListingStudents' => 'Lista Studenti',
+    'StudentList' => 'Lista Studenti',
+    'EditingStudent' => 'Modifica Studente',
+    'NewStudent' => 'Nuovo Studente',
+
+    'Body_part' => 'Parte del corpo',
+    'NoBody_parts' => 'Nulla qui',
+    'ListingBody_parts' => 'Lista Parti del corpo',
+    'Body_partList' => 'Lista Parti del corpo',
+    'EditingBody_part' => 'Modifica Parte del corpo',
+    'NewBody_part' => 'Nuova Parte del corpo',
+    
+    'School' => 'Scuola',
     'ListingSchools' => 'Lista Scuole',
     'Note' => 'Note',
-    'StudentList' => 'Lista Studenti',
     'SchoolList' => 'Lista Scuole',
-    'EditingStudent' => 'Modifica Studente',
     'EditingSchool' => 'Modifica Scuola',
-    'NewStudent' => 'Nuovo Studente',
     'NewSchool' => 'Nuova Scuola',    
         
     'Help' => 'Guida',
