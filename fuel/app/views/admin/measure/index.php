@@ -15,7 +15,7 @@
 <?php foreach ($measures as $item): ?>		<tr>
 
 			<td><?php echo $item->student->name; ?></td>
-			<td><?php echo $item->body_part->name; ?></td>
+			<td><?php echo $item->body_part->name\; ?></td>
 			<td><?php echo $item->value; ?></td>
 			<td><?php echo $item->note; ?></td>
 			<td>

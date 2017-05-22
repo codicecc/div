@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+# DIV - FPbase based
+
 # FPbase
 
 ## My FuelPHP Base
