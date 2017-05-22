@@ -21,11 +21,13 @@ class Controller_Admin_Measure extends Controller_Admin
 					//Debug::dump(Upload::get_files()[0]["file"]);
 					foreach(Upload::get_files() as $file){
 						$file_content = File::read(Upload::get_files()[0]["file"], true);
+						//Debug::dump($file_content);
 						$a_file_content=(Format::forge($file_content, 'csv')->to_array());
 					}
 					
-					echo $a_file_content[1]["test1"];
-					//Debug::dump($file_content);
+					//Debug::dump($a_file_content[0]["studente"]);
+					
+					//Debug::dump($a_file_content);
 						// save them according to the config
 						//Upload::save();
 				
