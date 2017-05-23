@@ -10,7 +10,7 @@ return array(
     
     'BrowseForCSVFile' => 'Carica da file CSV',
     'Process' => 'Elabora File',
-    'processCSVFile' => 'Carica i dati da un CSV, seleziona la scuola di appartenenza e quindi il file.',
+    'processCSVFile' => 'Carica i dati da un CSV,<br />seleziona la scuola di appartenenza<br /> e quindi il file.',
 
     'Student' => 'Studente',
     'ListingStudents' => 'Lista Studenti',

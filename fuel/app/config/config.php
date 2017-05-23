@@ -405,7 +405,7 @@ return array(
 						 )
 					)
 			 ),
-			 'users' => array(
+			 '/admin/users' => array(
 					'text'   => 'Users',
 					'rights' => 'users'
 			 ),

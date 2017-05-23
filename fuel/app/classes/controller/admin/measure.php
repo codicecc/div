@@ -1,50 +1,40 @@
 <?php
-class Controller_Admin_Measure extends Controller_Admin
-{
+class Controller_Admin_Measure extends Controller_Admin{
 
-	public function action_index(){
-		
+	private function upload(){
 		if (Input::method() == 'POST'){
-			// File uploaded?
 			if (!empty($_FILES)){
-				// Custom configuration for this upload
 				$config = array(
 						'path' => DOCROOT.'files',
 						'randomize' => true,
 						'ext_whitelist' => array('csv'),
 				);
-				// process the uploaded files in $_FILES
-				Upload::process($config);
-				
+				Upload::process($config);		
 				// if there are any valid files
 				if (Upload::is_valid()){
-					//Debug::dump(Upload::get_files()[0]["file"]);
 					foreach(Upload::get_files() as $file){
 						$file_content = File::read(Upload::get_files()[0]["file"], true);
-						//Debug::dump($file_content);
 						$a_file_content=(Format::forge($file_content, 'csv')->to_array());
-					}
-					
-					//Debug::dump($a_file_content[0]["studente"]);
-					
-					//Debug::dump($a_file_content);
-						// save them according to the config
-						//Upload::save();
-				
-						// call a model method to update the database
-						//Model_Uploads::add(Upload::get_files());
+						//Actions on files
+					}		
+					Debug::dump($a_file_content);
+					Debug::dump($a_file_content[0]["studente"]);
+					Debug::dump($a_file_content[0]["spalle"]);
+					Debug::dump($a_file_content[0]["torace"]);
 				}
 				
-				//Debug::dump(Upload::get_errors());
-				// and process any errors
 				foreach (Upload::get_errors() as $file){
-						// $file is an array with all file information,
-						// $file['errors'] contains an array of all error occurred
-						// each array element is an an array containing 'error' and 'message'
+					// $file is an array with all file information,
+					// $file['errors'] contains an array of all error occurred
+					// each array element is an an array containing 'error' and 'message'
 				}
-				//die();
 			}
-		}
+		}	
+	}
+	
+	public function action_index(){
+		
+		$this->upload();
 		
 		$data['measures'] = Model_Measure::find('all');
 		$this->template->title = "Measures";

@@ -36,7 +36,7 @@
 </div>
 <div style="margin:0 2rem;float:left;">
 <h3>Utenti</h3>
-<p>Gestione utenti</p>
+<p><a href="/admin/users">Gestione utenti</a></p>
 </div>
 <div style="margin:0 2rem;float:left;">
 <h3>Guida</h3>

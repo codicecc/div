@@ -7,10 +7,10 @@
 	<strong><?php echo __('admin.BodyPart');?>:</strong>
 	<?php echo $measure->body_part->name; ?></p>
 <p>
-	<strong>Value:</strong>
+	<strong><?php echo __('admin.Value');?>:</strong>
 	<?php echo $measure->value; ?> cm</p>
 <p>
-	<strong>Note:</strong>
+	<strong><?php echo __('admin.Note');?>:</strong>
 	<?php echo $measure->note; ?></p>
 
 <?php echo render('admin/measure/_actions'); ?>
