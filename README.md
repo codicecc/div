@@ -1,4 +1,4 @@
-# DIV - [FPbase](https://github.com/codicecc/fpbase) based
+# DIV - [FPbase](https://github.com/codicecc/fpbase) Based Project 
 
 # FuelPHP
 
