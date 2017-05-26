@@ -13,11 +13,13 @@ return array(
     'processCSVFile' => 'Carica i dati da un CSV,<br />seleziona la scuola di appartenenza<br /> e quindi il file.',
 
     'Student' => 'Studente',
+    'Students' => 'Studenti',
     'ListingStudents' => 'Lista Studenti',
     'StudentList' => 'Lista Studenti',
     'EditingStudent' => 'Modifica Studente',
     'NewStudent' => 'Nuovo Studente',
 
+    'Body_parts' => 'Parti del corpo',
     'Body_part' => 'Parte del corpo',
     'NoBody_parts' => 'Nulla qui',
     'ListingBody_parts' => 'Lista Parti del corpo',
@@ -26,6 +28,7 @@ return array(
     'NewBody_part' => 'Nuova Parte del corpo',
     
     'School' => 'Scuola',
+    'Schools' => 'Scuole',
     'ListingSchools' => 'Lista Scuole',
     'Note' => 'Note',
     'SchoolList' => 'Lista Scuole',
