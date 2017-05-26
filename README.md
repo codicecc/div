@@ -1,35 +1,5 @@
 # DIV - FPbase based
 
-# FPbase
-
-## My FuelPHP Base
-
-My FuelPHP Base version 1703111411
-
-### User management
-FuelPHP _Boilerplate_ with user management based on _SimpleAuth_.
-
-Every _Role_ belong to own _Group_ __with same name__. For every _Role_ there are some _Permissions_.
-
-The _Groups_ are:
-* Banned
-* Generic
-* AdminAreaAccess
-* Subscriber
-* Editor
-* Manager
-* Admin
-
-### Multilanguage settings
-
-User language value is stored in key "lang" of _profile_fields_ user field 
-
-### Send Email
-
-Email2 class, send2 method It is used for Recovery Password 
-
-### Recovery Password 
-
 # FuelPHP
 
 * Version: 1.8
