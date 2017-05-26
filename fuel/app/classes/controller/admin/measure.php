@@ -17,10 +17,6 @@ class Controller_Admin_Measure extends Controller_Admin{
 						$a_file_content=(Format::forge($file_content, 'csv')->to_array());
 						//Actions on files
 					}		
-					Debug::dump($a_file_content);
-					Debug::dump($a_file_content[0]["studente"]);
-					Debug::dump($a_file_content[0]["spalle"]);
-					Debug::dump($a_file_content[0]["torace"]);
 				}
 				
 				foreach (Upload::get_errors() as $file){
@@ -28,8 +24,24 @@ class Controller_Admin_Measure extends Controller_Admin{
 					// $file['errors'] contains an array of all error occurred
 					// each array element is an an array containing 'error' and 'message'
 				}
+				$this->process($a_file_content);
 			}
 		}	
+	}
+	private function process($a_file_content=null){
+		if(isset($a_file_content)){
+			//Debug::dump(Input::post('school_id'));
+			for($i=0;$i<count($a_file_content);$i++){
+				//Student exists
+				$result=Model_student::query()->where('name','like',$a_file_content[$i]["studente"])->get();
+				if(isset($result[1])){
+					debug::dump( $result[1]["id"]);
+				}
+				else{
+				
+				}
+			}
+		}
 	}
 	
 	public function action_index(){

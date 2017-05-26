@@ -7,3 +7,4 @@
 <?php endif;?>
 
 <?php echo render('admin/users/_actionuser'); ?>
+</p>
