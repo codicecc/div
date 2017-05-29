@@ -5,6 +5,7 @@
 	<thead>
 		<tr>
 			<th><?php echo __('admin.Student');?></th>
+			<th><?php echo __('admin.School');?></th>
 			<th><?php echo __('admin.Body_part');?></th>
 			<th><?php echo __('admin.Value');?></th>
 			<th><?php echo __('admin.Note');?></th>
@@ -15,6 +16,7 @@
 <?php foreach ($measures as $item): ?>		<tr>
 
 			<td><?php echo $item->student->name; ?></td>
+			<td><?php echo $item->student->school->name; ?></td>
 			<td><?php echo $item->body_part->name; ?></td>
 			<td><?php echo $item->value; ?></td>
 			<td><?php echo $item->note; ?></td>

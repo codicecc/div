@@ -33,24 +33,82 @@ class Controller_Admin_Measure extends Controller_Admin{
 	}
 	private function process($a_file_content=null){
 		if(isset($a_file_content)){
-			//Debug::dump(Input::post('school_id'));
-			for($i=0;$i<count($a_file_content);$i++){
-				// Every CSV row
-				///Debug::dump($a_file_content[$i]);
-				//Student exists
-				//debug::dump($a_file_content[$i]);
-				$result=Model_student::query()->where('name','like',$a_file_content[$i]["studente"])->get();
+			foreach($a_file_content as $label => $value){
+				// $label is Array Index
+				// $value is Array Value at Index position
+				//Debug::dump($label);
+				//Debug::dump($value);			
+
+				// For every CSV row check if Student of a school selected, exists
+				$result=Model_student::query()
+						->where('name','like',$value["studente"])
+						->where('school_id',Input::post('school_id'))
+						->get();
+				//Debug::dump(isset($result[1]));
+				// $result[1] isset returns a boolean value (true or false) 
 				if(isset($result[1])){
-					//debug::dump( $result[$i]["name"]);
-					//find ID for spalle
-					$spalleId = \DB::select('id')->from('body_parts')->where('name', 'LIKE', 'spalle')->execute()->get('id', 'defaultvalue');
-					$bracciaId = \DB::select('id')->from('body_parts')->where('name', 'LIKE', 'braccia')->execute()->get('id', 'defaultvalue');
-					$toraceId = \DB::select('id')->from('body_parts')->where('name', 'LIKE', 'torace')->execute()->get('id', 'defaultvalue');
-					
-					$r=Model_measure::query()->where('student_id',$result[1]["id"])->get();
+					// Student id
+					//Debug::dump($result[1]["id"]);
+					// Loop: every column write or update measure record
+					foreach($value as $l => $v){
+						// $l is label of CSV column
+						// $v is value of CSV column
+						//Debug::dump($l);
+						//Debug::dump($v);
+						$r=Model_measure::query()
+								->where('student_id',$result[1]["id"])
+								->where('body_part_id',
+										\DB::select('id')->from('body_parts')->where('name', 'LIKE', $l)->execute()->get('id', 'defaultvalue')
+									)
+								->get();
+						/*
+						$r2=Model_measure::find('all',array(
+							'where' => array(
+									array('student_id',$result[1]["id"]),
+									'and' => array(
+										'body_part_id',
+										\DB::select('id')->from('body_parts')->where('name', 'LIKE', $l)->execute()->get('id', 'defaultvalue')	
+									),
+								),
+							));
+						*/
+						if(!empty($r)){
+							foreach($r as $measure){
+								debug::dump($measure->value);
+								debug::dump($v);
+								// Update value
+								$measure->value=$v;
+								$measure->save();								
+							}
+						}
+					}
 				}
 				else{
-				
+					debug::dump("Adding measures ...");
+					// Create student
+					$student=new Model_student();
+					$student = Model_Student::forge(array(
+						'name' => $value["studente"],
+						'school_id' => Input::post('school_id'),
+						'note' => 'Created by CSV',
+					));
+					if ($student and $student->save()){
+						// Create measure
+						foreach($value as $l => $v){
+							$body_part_id=\DB::select('id')->from('body_parts')->where('name', 'LIKE', $l)->execute()->get('id', '0');
+							if($body_part_id>0){
+								$measure=new Model_measure();
+								$measure= Model_Measure::forge(array(
+									'student_id' => $student->id,
+									'body_part_id' => $body_part_id,
+									'value' => $v,
+									'note' => 'Created by CSV',
+								));
+								$measure->save();
+							}
+						}
+						//debug::dump(\DB::select('id')->from('body_parts')->where('name', 'LIKE', $l)->execute()->get('id', '0'));
+					}
 				}
 			}
 		}

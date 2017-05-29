@@ -31,7 +31,6 @@ class Model_Measure extends \Orm\Model{
 		$val->add_field('body_part_id', 'Body Part Id', 'required|valid_string[numeric]');
 		$val->add_field('value', 'Value', 'required|max_length[255]');
 		//$val->add_field('note', 'Note', 'required');
-
 		return $val;
 	}
 
