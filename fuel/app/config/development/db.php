@@ -10,5 +10,6 @@ return array(
 			'username'   => 'danzainvetrina',
 			'password'   => 'danzainvetrina',
 		),
+		'profiling'  => true,
 	),
 );

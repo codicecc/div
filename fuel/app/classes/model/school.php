@@ -1,7 +1,14 @@
 <?php
 class Model_School extends \Orm\Model{
 	
-	protected static $_has_many = array('students');
+	//protected static $_has_many = array('students');
+	protected static $_has_many = array('students' => array(
+		'model_to' => 'Model_Student',
+		'key_from' => 'id',
+		'key_to' => 'school_id',
+		'cascade_save' => true,			
+		'cascade_delete' => true,		
+	));
 	
 	protected static $_properties = array(
 		'id',
