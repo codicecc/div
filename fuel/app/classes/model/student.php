@@ -2,7 +2,13 @@
 class Model_Student extends \Orm\Model{
 	
 	protected static $_belongs_to = array('school');
-	protected static $_has_many = array('measures');
+	protected static $_has_many = array('measures' => array(
+			'model_to' => 'Model_Measure',
+			'key_from' => 'id',
+			'key_to' => 'student_id',
+			'cascade_save' => true,			
+			'cascade_delete' => true,		
+		));
 	
 	protected static $_properties = array(
 		'id',

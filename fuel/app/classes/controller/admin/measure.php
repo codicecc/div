@@ -45,7 +45,8 @@ class Controller_Admin_Measure extends Controller_Admin{
 						->where('school_id',Input::post('school_id'))
 						->get();
 				//Debug::dump(isset($result[1]));
-				// $result[1] isset returns a boolean value (true or false) 
+				// $result[1] isset returns a boolean value (true or false)
+				// checks if does student exsisted
 				if(isset($result[1])){
 					// Student id
 					//Debug::dump($result[1]["id"]);
@@ -90,7 +91,7 @@ class Controller_Admin_Measure extends Controller_Admin{
 					$student = Model_Student::forge(array(
 						'name' => $value["studente"],
 						'school_id' => Input::post('school_id'),
-						'note' => 'Created by CSV',
+						'note' => 'Created by CSV'.date('ymdis'),
 					));
 					if ($student and $student->save()){
 						// Create measure
