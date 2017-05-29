@@ -3,7 +3,7 @@ class Controller_Admin_Measure extends Controller_Admin{
 
 	private function upload(){
 		if (Input::method() == 'POST'){
-			if (!empty($_FILES)){
+			if (!empty($_FILES["file"]["size"])){
 				$config = array(
 						'path' => DOCROOT.'files',
 						'randomize' => true,
@@ -26,16 +26,28 @@ class Controller_Admin_Measure extends Controller_Admin{
 				}
 				$this->process($a_file_content);
 			}
+			else{
+				Session::set_flash('error', __('admin.NoFile'));
+			}
 		}	
 	}
 	private function process($a_file_content=null){
 		if(isset($a_file_content)){
 			//Debug::dump(Input::post('school_id'));
 			for($i=0;$i<count($a_file_content);$i++){
+				// Every CSV row
+				///Debug::dump($a_file_content[$i]);
 				//Student exists
+				//debug::dump($a_file_content[$i]);
 				$result=Model_student::query()->where('name','like',$a_file_content[$i]["studente"])->get();
 				if(isset($result[1])){
-					debug::dump( $result[1]["id"]);
+					//debug::dump( $result[$i]["name"]);
+					//find ID for spalle
+					$spalleId = \DB::select('id')->from('body_parts')->where('name', 'LIKE', 'spalle')->execute()->get('id', 'defaultvalue');
+					$bracciaId = \DB::select('id')->from('body_parts')->where('name', 'LIKE', 'braccia')->execute()->get('id', 'defaultvalue');
+					$toraceId = \DB::select('id')->from('body_parts')->where('name', 'LIKE', 'torace')->execute()->get('id', 'defaultvalue');
+					
+					$r=Model_measure::query()->where('student_id',$result[1]["id"])->get();
 				}
 				else{
 				

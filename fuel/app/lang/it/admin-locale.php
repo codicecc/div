@@ -1,6 +1,7 @@
 <?php
 return array(
-    'Measure' => 'Misura',
+    'NoFile' => 'Nessun File',    
+		'Measure' => 'Misura',
     'ListingMeasures' => 'Lista Misure',
     'MeasureList' => 'Lista Misure',
     'EditingMeasure' => 'Modifica Misura',

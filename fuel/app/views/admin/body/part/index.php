@@ -4,13 +4,14 @@
 <table class="table table-striped">
 	<thead>
 		<tr>
+			<th>id</th>			
 			<th><?php echo __('admin.Name');?></th>
 			<th></th>
 		</tr>
 	</thead>
 	<tbody>
 <?php foreach ($body_parts as $item): ?>		<tr>
-
+			<td><?php echo $item->id; ?></td>
 			<td><?php echo $item->name; ?></td>
 			<td>
 				<?php
