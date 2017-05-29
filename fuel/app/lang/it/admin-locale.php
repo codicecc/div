@@ -1,7 +1,8 @@
 <?php
 return array(
 		'NoSchoolSelected' => 'E\' necessario selezionare una scuola!',
-		'studentExists' => 'UTENTE ESISTENTE. <a href="/admin/help" target="_blank">Consulta di Guida</a>.',
+		'studentExists' => 'STUDENTE ESISTENTE nella scuola selezionata. '.\Html::anchor('/admin/help#user_existing', 'Consulta di Guida').'.',
+		'studentCreated' => 'CREATO STUDENTE:',
     'NoFile' => 'Nessun File',    
 		'Measure' => 'Misura',
     'ListingMeasures' => 'Lista Misure',

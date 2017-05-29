@@ -38,16 +38,17 @@ class Controller_Admin_Measure extends Controller_Admin{
 			return 123;
 		}
 		if(isset($a_file_content)){
-			$flashMsg="";
+			// Get first Column Label of CSV file
+			foreach($a_file_content[0] as $l2 => $v2){
+				$firstColumnLabel=$l2;
+				break;
+			}
+			$flashMsgERROR="";
+			$flashMsgOK="";
 			foreach($a_file_content as $label => $value){
-				// $label is Array Index
-				// $value is Array Value at Index position
-				//Debug::dump($label);
-				//Debug::dump($value["studente"]);			
-
 				// For every CSV row check if Student of a school selected, exists
 				$result=Model_student::query()
-						->where('name','like',$value["studente"])
+						->where('name','like',$value[$firstColumnLabel])
 						->where('school_id',Input::post('school_id'))
 						->get();
 				foreach($result as $loopStudent){
@@ -55,7 +56,7 @@ class Controller_Admin_Measure extends Controller_Admin{
 					//if(isset($loopStudent->id)){
 					//Debug::dump($loopStudent);
 					if($loopStudent->id>0){						
-						$flashMsg.=$value["studente"]." - ".Model_School::find(Input::post('school_id'))->name."<br />";
+						$flashMsgERROR.=$value[$firstColumnLabel]." - ".Model_School::find(Input::post('school_id'))->name."<br />";
 						break 2;						
 					}
 				}
@@ -65,11 +66,12 @@ class Controller_Admin_Measure extends Controller_Admin{
 					// Create student
 					$student=new Model_student();
 					$student = Model_Student::forge(array(
-						'name' => $value["studente"],
+						'name' => $value[$firstColumnLabel],
 						'school_id' => Input::post('school_id'),
 						'note' => 'Created by CSV'.date('ymdis'),
 					));
 					if ($student and $student->save()){
+						$flashMsgOK.="<br />- ".$student->name . " - ".Model_School::find(Input::post('school_id'))->name;
 						// Create measure
 						foreach($value as $l => $v){
 							$body_part_id=\DB::select('id')->from('body_parts')->where('name', 'LIKE', $l)->execute()->get('id', '0');
@@ -88,7 +90,8 @@ class Controller_Admin_Measure extends Controller_Admin{
 					}
 				//}
 			}
-			if(strlen($flashMsg)>0)Session::set_flash('error', $flashMsg.__('admin.studentExists'));
+			if(strlen($flashMsgERROR)>0)Session::set_flash('error', $flashMsgERROR.__('admin.studentExists'));
+			if(strlen($flashMsgOK)>0)Session::set_flash('success', __('admin.studentCreated').$flashMsgOK);
 		}
 	}
 	
