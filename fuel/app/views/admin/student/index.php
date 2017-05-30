@@ -26,7 +26,7 @@
 </table>
 
 <?php else: ?>
-<p>No Students.</p>
+<p><?php echo __('admin.NoStudents');?>.</p>
 
 <?php endif; ?>
 <p>

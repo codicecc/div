@@ -361,6 +361,10 @@ return array(
 								'text'   => 'BodyPart',
 								'rights' => 'body_part'
 						 ),
+						 '/admin/size' => array(
+								'text'   => 'Size',
+								'rights' => 'size'
+						 ),
 					)
 			 ),
 			'models' => array(

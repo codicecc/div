@@ -11,6 +11,7 @@ return array(
         2 => '003_create_students',
         3 => '004_create_body_parts',
         4 => '005_create_measures',
+        5 => '006_create_sizes',
       ),
     ),
     'module' => 

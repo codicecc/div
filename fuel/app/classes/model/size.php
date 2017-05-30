@@ -1,11 +1,14 @@
 <?php
-class Model_Body_Part extends \Orm\Model{
+class Model_Size extends \Orm\Model{
 	
-	protected static $_has_many = array('measures','size');
+	protected static $_belongs_to = array('body_part');
 
 	protected static $_properties = array(
 		'id',
-		'name',
+		'min',
+		'max',
+		'reference',
+		'body_part_id',
 		'created_at',
 		'updated_at',
 	);
@@ -24,7 +27,10 @@ class Model_Body_Part extends \Orm\Model{
 	public static function validate($factory)
 	{
 		$val = Validation::forge($factory);
-		$val->add_field('name', 'Name', 'required|max_length[255]');
+		$val->add_field('min', 'Min', 'required|max_length[255]');
+		$val->add_field('max', 'Max', 'required|max_length[255]');
+		$val->add_field('reference', 'Reference', 'required|max_length[255]');
+		$val->add_field('body_part_id', 'Body Part Id', 'required|valid_string[numeric]');
 
 		return $val;
 	}

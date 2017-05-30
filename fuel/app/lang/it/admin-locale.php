@@ -1,6 +1,15 @@
 <?php
 return array(
-		'NoSchoolSelected' => 'E\' necessario selezionare una scuola!',
+		'Size' => 'Taglia',
+		'Reference' => 'Riferimento Taglia',
+		'Min' => 'Min',
+		'Max' => 'Max',
+		'ListingSizes' => 'Lista Taglie',
+    'SizeList' => 'Lista Taglie',
+    'EditingSize' => 'Modifica Taglia',
+    'NewSize' => 'Nuova Taglia',
+    'NoSizes' => 'Nulla qui',
+    'NoSchoolSelected' => 'E\' necessario selezionare una scuola!',
 		'studentExists' => 'STUDENTE ESISTENTE nella scuola selezionata. '.\Html::anchor('/admin/help#user_existing', 'Consulta di Guida').'.',
 		'studentCreated' => 'CREATO STUDENTE:',
     'NoFile' => 'Nessun File',    
