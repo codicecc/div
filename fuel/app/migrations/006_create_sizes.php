@@ -8,6 +8,7 @@ class Create_sizes
 	{
 		\DBUtil::create_table('sizes', array(
 			'id' => array('constraint' => 11, 'type' => 'int', 'auto_increment' => true, 'unsigned' => true),
+			'body_part_id' => array('constraint' => 11, 'type' => 'int'),
 			'min' => array('constraint' => 255, 'type' => 'varchar'),
 			'max' => array('constraint' => 255, 'type' => 'varchar'),
 			'reference' => array('constraint' => 255, 'type' => 'varchar'),
