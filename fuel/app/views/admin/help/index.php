@@ -39,23 +39,14 @@
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
               <p><a class="btn" href="#">View details »</a></p>
             </div><!--/span-->
-            <div class="col-md-3">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details »</a></p>
-            </div><!--/span-->
-            <div id="sample" class="col-md-3">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details »</a></p>
-            </div><!--/span-->
+						<div id="user_existing" class="col-md-12">
+							<h1>Studente Duplicato?</h1>
+							<p>Nella Sidebar, qui a sinistra, trovi una suddivisione per argomenti. Mentre utilizzi l'applicazione sarai rimandato automaticamente alla sezione di riferimento della guida.<br />
+							Per qualsiasi esigenza non dimenticare il supporto telefonico o via email.</p>
+							<p><a href="#" class="btn btn-primary btn-large">Leggi »</a></p>
+						</div>
           </div><!--/row-->
-         <div id="user_existing" class="col-md-9">
-            <h1>Studente Duplicato?</h1>
-            <p>Nella Sidebar, qui a sinistra, trovi una suddivisione per argomenti. Mentre utilizzi l'applicazione sarai rimandato automaticamente alla sezione di riferimento della guida.<br />
-            Per qualsiasi esigenza non dimenticare il supporto telefonico o via email.</p>
-            <p><a href="#" class="btn btn-primary btn-large">Leggi »</a></p>
-        </div><!--/span-->
+         </div><!--/span-->
       </div>
 <!--      
  <div class="container-fluid">
