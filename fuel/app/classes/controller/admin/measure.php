@@ -33,7 +33,7 @@ class Controller_Admin_Measure extends Controller_Admin{
 	}
 	private function process($a_file_content=null){
 		$school_id=Input::post('school_id');
-		if(!isset($school_id)){
+		if(!isset($school_id)){                  
 			Session::set_flash('error', __('admin.NoSchoolSelected'));
 			return 123;
 		}
@@ -94,12 +94,20 @@ class Controller_Admin_Measure extends Controller_Admin{
 	
 	public function action_index(){
 		
-		$this->upload();
-		
 		$data['measures'] = Model_Measure::find('all');
-		$this->template->title = "Measures";
+		
+		$student_id=Input::post('student_id');
+		if(isset($student_id)){
+			$data['measures'] = Model_Measure::query()
+				->where('student_id',$student_id)
+				->get();
+			$this->template->student_id = $student_id;
+		}
+		else{
+			$this->upload();
+		}
+		$this->template->title = "Measures";    
 		$this->template->content = View::forge('admin/measure/index', $data);
-
 	}
 
 	public function action_view($id = null)

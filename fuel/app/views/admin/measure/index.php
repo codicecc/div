@@ -1,6 +1,11 @@
 <h2><?php echo __('admin.ListingMeasures');?></h2>
 <br>
+<div style="float:left;margin:0 4rem 0 0;">
 <?php echo render('admin/measure/_processCSVFile'); ?>
+</div>
+<div>
+<?php echo render('admin/measure/_studentFinder'); ?>
+</div>
 <?php if ($measures): ?>
 <table class="table table-striped">
 	<thead>

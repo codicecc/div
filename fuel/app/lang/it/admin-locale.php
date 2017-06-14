@@ -1,5 +1,6 @@
 <?php
 return array(
+		'Filter' => 'Filtro',
 		'Size' => 'Taglia',
 		'Reference' => 'Riferimento Taglia',
 		'Min' => 'Min',
