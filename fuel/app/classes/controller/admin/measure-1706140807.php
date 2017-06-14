@@ -57,10 +57,12 @@ class Controller_Admin_Measure extends Controller_Admin{
 					//Debug::dump($loopStudent);
 					if($loopStudent->id>0){						
 						$flashMsgERROR.=$value[$firstColumnLabel]." - ".Model_School::find(Input::post('school_id'))->name."<br />";
-						break 1;						
+						break 2;						
 					}
 				}
-				if(empty($result)){
+				//else{
+					//exit;
+					//debug::dump("Adding measures ...");
 					// Create student
 					$student=new Model_student();
 					$student = Model_Student::forge(array(
@@ -84,8 +86,9 @@ class Controller_Admin_Measure extends Controller_Admin{
 								$measure->save();
 							}
 						}
+						//debug::dump(\DB::select('id')->from('body_parts')->where('name', 'LIKE', $l)->execute()->get('id', '0'));
 					}
-				}
+				//}
 			}
 			if(strlen($flashMsgERROR)>0)Session::set_flash('error', $flashMsgERROR.__('admin.studentExists'));
 			if(strlen($flashMsgOK)>0)Session::set_flash('success', __('admin.studentCreated').$flashMsgOK);

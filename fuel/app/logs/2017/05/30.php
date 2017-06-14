@@ -310,3 +310,11 @@ WARNING - 2017-05-30 12:57:31 --> Fuel\Core\Fuel::init - The configured locale e
 INFO - 2017-05-30 12:57:31 --> Fuel\Core\Request::__construct - Creating a new main Request with URI = "admin/size"
 INFO - 2017-05-30 12:57:31 --> Fuel\Core\Request::execute - Called
 INFO - 2017-05-30 12:57:31 --> Fuel\Core\Request::execute - Setting main Request
+WARNING - 2017-05-30 13:04:39 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+INFO - 2017-05-30 13:04:39 --> Fuel\Core\Request::__construct - Creating a new main Request with URI = "admin/size"
+INFO - 2017-05-30 13:04:39 --> Fuel\Core\Request::execute - Called
+INFO - 2017-05-30 13:04:39 --> Fuel\Core\Request::execute - Setting main Request
+WARNING - 2017-05-30 13:04:44 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+INFO - 2017-05-30 13:04:44 --> Fuel\Core\Request::__construct - Creating a new main Request with URI = "admin/users"
+INFO - 2017-05-30 13:04:44 --> Fuel\Core\Request::execute - Called
+INFO - 2017-05-30 13:04:44 --> Fuel\Core\Request::execute - Setting main Request

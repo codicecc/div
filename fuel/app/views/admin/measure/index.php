@@ -1,5 +1,6 @@
 <h2><?php echo __('admin.ListingMeasures');?></h2>
 <br>
+<?php echo render('admin/measure/_processCSVFile'); ?>
 <?php if ($measures): ?>
 <table class="table table-striped">
 	<thead>
@@ -39,5 +40,3 @@
 	<?php echo Html::anchor('admin/measure/create', __('admin.AddNew'), array('class' => 'btn btn-success')); ?>
 <?php endif;?>
 </p>
-
-<?php echo render('admin/measure/_processCSVFile'); ?>
