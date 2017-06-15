@@ -110,8 +110,7 @@ class Controller_Admin_Measure extends Controller_Admin{
 		$this->template->content = View::forge('admin/measure/index', $data);
 	}
 
-	public function action_view($id = null)
-	{
+	public function action_view($id = null)	{
 		$data['measure'] = Model_Measure::find($id);
 
 		$this->template->title = "Measure";
@@ -119,8 +118,7 @@ class Controller_Admin_Measure extends Controller_Admin{
 
 	}
 
-	public function action_create()
-	{
+	public function action_create()	{
 		if (Input::method() == 'POST')
 		{
 			$val = Model_Measure::validate('create');
@@ -157,8 +155,7 @@ class Controller_Admin_Measure extends Controller_Admin{
 
 	}
 
-	public function action_edit($id = null)
-	{
+	public function action_edit($id = null)	{
 		$measure = Model_Measure::find($id);
 		$val = Model_Measure::validate('edit');
 
@@ -202,8 +199,7 @@ class Controller_Admin_Measure extends Controller_Admin{
 
 	}
 
-	public function action_delete($id = null)
-	{
+	public function action_delete($id = null)	{
 		if ($measure = Model_Measure::find($id))
 		{
 			$measure->delete();

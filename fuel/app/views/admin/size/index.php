@@ -1,5 +1,11 @@
 <h2><?php echo __('admin.ListingSizes');?></h2>
-<br>
+
+<p>
+<?php if(Auth::has_access(Request::active()->controller.'.create')):?>
+	<?php echo Html::anchor('admin/size/create', __('admin.AddNew'), array('class' => 'btn btn-success')); ?>
+<?php endif;?>
+</p>
+
 <?php if ($sizes): ?>
 <table class="table table-striped">
 	<thead>
@@ -29,8 +35,3 @@
 <?php else: ?>
 <p><?php echo __('admin.NoSizes');?>.</p>
 <?php endif; ?>
-<p>
-<?php if(Auth::has_access(Request::active()->controller.'.create')):?>
-	<?php echo Html::anchor('admin/size/create', __('admin.AddNew'), array('class' => 'btn btn-success')); ?>
-<?php endif;?>
-</p>

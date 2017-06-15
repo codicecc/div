@@ -9,8 +9,12 @@
 			$select_box = \Presenter::forge('admin/student/selectorwithschool');
 			echo $select_box;	
 		?>
+		<p>
 		<?php echo Form::submit('submit', __('admin.Filter'), array('class' => 'btn btn-primary')); ?>
+		<?php echo Html::anchor('admin/measure', __('admin.Reset'),array("class"=>"btn btn-info")); ?>
+		</p>
 	</label>
+</div>	
 </fieldset>
 <?php echo Form::close(); ?>
 </p>

@@ -5,7 +5,7 @@
 	<title><?php echo $title; ?></title>
 	<?php echo Asset::css(array(
 		'bootstrap.css',
-		//'custom.css',
+		'custom.css',
 		));
 	?>
 	<style>
