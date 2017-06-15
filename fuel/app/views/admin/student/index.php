@@ -18,6 +18,7 @@
 			<td><?php echo $item->note; ?></td>
 			<td>
 				<?php
+					echo Html::anchor('/admin/measure/index/'.$item->id, __('admin.Measures'), array('class' => 'btn btn-info'));
 					echo Utilities::adminActions($item,Request::active()->route->segments[1],array(array(__('admin.View'),'view'),array(__('admin.Edit'),'edit'),array(__('admin.Delete'),'delete'),));
 				?>
 			</td>
