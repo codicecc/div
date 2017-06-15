@@ -15,6 +15,7 @@
 			<th><?php echo __('admin.Body_part');?></th>
 			<th><?php echo __('admin.Value');?></th>
 			<th><?php echo __('admin.Note');?></th>
+			<th><?php echo __('admin.Measure');?></th>
 			<th></th>
 		</tr>
 	</thead>
@@ -26,6 +27,7 @@
 			<td><?php echo $item->body_part->name; ?></td>
 			<td><?php echo $item->value; ?></td>
 			<td><?php echo $item->note; ?></td>
+			<td><?php echo Hsize::getSize($item->student->id,$item->body_part->id,$item->value);?></td>			
 			<td>
 				<?php
 					echo Utilities::adminActions($item,Request::active()->route->segments[1],array(array(__('admin.View'),'view'),array(__('admin.Edit'),'edit'),array(__('admin.Delete'),'delete'),));
