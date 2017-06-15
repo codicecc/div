@@ -6,6 +6,8 @@
 	<?php echo Asset::css(array(
 		'bootstrap.css',
 		'custom.css',
+		'font-awesome.min.css',
+		'sb-admin-2.min.css',
 		));
 	?>
 	<style>
@@ -25,7 +27,7 @@
 <body>
 
 	<?php if ($current_user): ?>
-	<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar navbar-defult navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">

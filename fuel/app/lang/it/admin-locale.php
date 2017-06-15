@@ -1,5 +1,6 @@
 <?php
 return array(
+	'Details' => 'Dettagli',
 	'Reset' => 'Reset',
 	'Filter' => 'Filtro',
 	'Size' => 'Taglia',

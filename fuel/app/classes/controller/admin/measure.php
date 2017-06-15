@@ -101,7 +101,6 @@ class Controller_Admin_Measure extends Controller_Admin{
 			$data['measures'] = Model_Measure::query()
 				->where('student_id',$student_id)
 				->get();
-			$this->template->student_id = $student_id;
 		}
 		else{
 			$this->upload();
