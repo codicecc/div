@@ -96,7 +96,7 @@ class Controller_Admin_Measure extends Controller_Admin{
 		
 		$data['measures'] = Model_Measure::find('all');
 		
-		$student_id?Input::post('student_id'):$student_id;
+		$student_id=Input::post('student_id')?Input::post('student_id'):$student_id;
 		if(isset($student_id)){
 			$data['measures'] = Model_Measure::query()
 				->where('student_id',$student_id)

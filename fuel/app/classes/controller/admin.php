@@ -78,8 +78,6 @@ class Controller_Admin extends Controller_Base
 				}
 			}
 		}
-
-		//Email2::send2("Francesco Dattolo TEST","info@francescodattolo.it","Test Invio da FPBase Locale","It's only a TEST");
 		
 		$this->template->title = 'Login';
 		$this->template->content = View::forge('admin/login', array('val' => $val), false);

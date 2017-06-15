@@ -17,5 +17,8 @@ class Helper {
 		 }
 		 return $menu . "</ul>";
 	}
+	static function count($table){
+		return count(DB::select('*')->from($table)->execute());
+	}
 }
 ?>

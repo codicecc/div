@@ -7,12 +7,12 @@
 						<i class="fa fa-university fa-5x"></i>
 					</div>
 					<div class="col-xs-9 text-right">
-						<div class="huge">26</div>
+						<div class="huge"><?php echo Helper::count("schools")?></div>
 						<div><?php echo __("admin.Schools");?>!</div>
 					</div>
 				</div>
 			</div>
-			<a href="#">
+			<a href="/admin/school">
 				<div class="panel-footer">
 					<span class="pull-left"><?php echo __("admin.Details");?></span>
 					<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -29,12 +29,12 @@
 						<i class="fa fa-user fa-5x"></i>
 					</div>
 					<div class="col-xs-9 text-right">
-						<div class="huge">12</div>
+						<div class="huge"><?php echo Helper::count("students")?></div>
 						<div><?php echo __("admin.Students");?>!</div>
 					</div>
 				</div>
 			</div>
-			<a href="#">
+			<a href="/admin/student">
 				<div class="panel-footer">
 					<span class="pull-left"><?php echo __("admin.Details");?></span>
 					<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -51,12 +51,12 @@
 						<i class="fa fa-tasks fa-5x"></i>
 					</div>
 					<div class="col-xs-9 text-right">
-						<div class="huge">124</div>
+						<div class="huge"><?php echo Helper::count("measures")?></div>
 						<div><?php echo __("admin.Measures");?>!</div>
 					</div>
 				</div>
 			</div>
-			<a href="#">
+			<a href="/admin/measure">
 				<div class="panel-footer">
 					<span class="pull-left"><?php echo __("admin.Details");?></span>
 					<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -78,7 +78,7 @@
 					</div>
 				</div>
 			</div>
-			<a href="#">
+			<a href="/admin/help">
 				<div class="panel-footer">
 					<span class="pull-left">View Details</span>
 					<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -87,8 +87,4 @@
 			</a>
 		</div>
 	</div>
-</div>
-<div class="jumbotron">
-	<h1 class="page-header"><?php echo __('admin.'.'welcome');?> <?php echo $current_user->username ?>!</h1>
-	<p>Per ulteriori informazioni <a href="/admin/help">vai alla Guida</a></p>
 </div>
