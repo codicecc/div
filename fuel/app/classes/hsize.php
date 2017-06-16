@@ -11,11 +11,9 @@ class hsize{
 		$query->on('body_parts.id', '=', 'sizes.body_part_id');
 		$query->where('students.id',$student_id);
 		$query->where('body_parts.id',$bodyPartId);
-		$query->where('sizes.min','<=',$sizeValue);
-		$query->where('sizes.max','>=',$sizeValue);
-		
+		$query->where('sizes.min' ,'<=',$sizeValue);
+		$query->where('sizes.max' ,'>=',$sizeValue);
 		$rows=$query->execute();
-		
 		
 		//debug::dump($rows[0]["reference"]);
 		

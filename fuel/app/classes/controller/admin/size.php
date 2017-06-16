@@ -4,7 +4,7 @@ class Controller_Admin_Size extends Controller_Admin
 
 	public function action_index()
 	{
-		$data['sizes'] = Model_Size::find('all');
+		$data['sizes'] = Model_Size::find('all',array('order_by'=>array('created_at'=>'desc')));
 		$this->template->title = "Sizes";
 		$this->template->content = View::forge('admin/size/index', $data);
 

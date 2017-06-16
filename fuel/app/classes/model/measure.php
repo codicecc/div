@@ -28,8 +28,8 @@ class Model_Measure extends \Orm\Model{
 	{
 		$val = Validation::forge($factory);
 		$val->add_field('student_id', 'Student Id', 'required|valid_string[numeric]');
-		$val->add_field('body_part_id', 'Body Part Id', 'required|valid_string[numeric]');
-		$val->add_field('value', 'Value', 'required|max_length[255]');
+		$val->add_field('body_part_id', 'Body Part Id', 'required|valid_string[decimal]');
+		$val->add_field('value', 'Value', 'required|valid_decimal[5,2]');
 		//$val->add_field('note', 'Note', 'required');
 		return $val;
 	}

@@ -27,8 +27,8 @@ class Model_Size extends \Orm\Model{
 	public static function validate($factory)
 	{
 		$val = Validation::forge($factory);
-		$val->add_field('min', 'Min', 'required|max_length[255]');
-		$val->add_field('max', 'Max', 'required|max_length[255]');
+		$val->add_field('min', 'Min', 'required|valid_string[decimal]');
+		$val->add_field('max', 'Max', 'required|valid_string[decimal]');
 		$val->add_field('reference', 'Reference', 'required|max_length[255]');
 		$val->add_field('body_part_id', 'Body Part Id', 'required|valid_string[numeric]');
 

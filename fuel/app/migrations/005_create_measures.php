@@ -10,7 +10,7 @@ class Create_measures
 			'id' => array('constraint' => 11, 'type' => 'int', 'auto_increment' => true, 'unsigned' => true),
 			'student_id' => array('constraint' => 11, 'type' => 'int'),
 			'body_part_id' => array('constraint' => 11, 'type' => 'int'),
-			'value' => array('constraint' => 255, 'type' => 'varchar'),
+			'value' => array('constraint' => '5,2', 'type' => 'decimal'),
 			'note' => array('type' => 'text'),
 			'created_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
 			'updated_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
