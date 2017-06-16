@@ -34,7 +34,15 @@
 				?>
 			</td>
 		</tr>
-<?php endforeach; ?>	</tbody>
+<?php endforeach; ?>
+<?php if(Pagination::instance('mypagination')):?>		
+		<tr>
+ 			<td colspan="7">
+ 				<?php echo Pagination::instance('mypagination')->render();?>
+ 			</td>
+ 		</tr>
+<?php endif;?> 		
+	</tbody>
 </table>
 
 <?php else: ?>

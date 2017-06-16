@@ -94,8 +94,6 @@ class Controller_Admin_Measure extends Controller_Admin{
 	
 	public function action_index($student_id=null){
 		
-		$data['measures'] = Model_Measure::find('all');
-		
 		$student_id=Input::post('student_id')?Input::post('student_id'):$student_id;
 		if(isset($student_id)){
 			$data['measures'] = Model_Measure::query()
@@ -104,6 +102,25 @@ class Controller_Admin_Measure extends Controller_Admin{
 		}
 		else{
 			$this->upload();
+			$config = array(
+				'pagination_url' => '/admin/measure',
+				'total_items'    => Model_Measure::count(),
+				'per_page'       => 100,
+				'uri_segment'    => 'page',
+			);
+			
+			// Create a pagination instance named 'mypagination'
+			$pagination = Pagination::forge('mypagination', $config);
+		  
+			$data['measures'] = Model_Measure::query()
+				->order_by('created_at','desc')
+				->rows_offset($pagination->offset)
+				->rows_limit($pagination->per_page)
+				->get();
+			
+			// we pass the object, it will be rendered when echo'd in the view
+			$data['pagination'] = $pagination;
+			
 		}
 		$this->template->title = "Measures";    
 		$this->template->content = View::forge('admin/measure/index', $data);
