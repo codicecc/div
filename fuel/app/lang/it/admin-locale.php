@@ -35,8 +35,17 @@ return array(
     'EditingStudent' => 'Modifica Studente',
     'NewStudent' => 'Nuovo Studente',
     
+    'DifficultIndex' => 'Indice Difficoltà',
+    'Model' => 'Modello',
+    'Models' => 'Modelli',
+    'ListingModels' => 'Lista Modelli',
+    'ModelList' => 'Lista Modelli',
+    'EditingModel' => 'Modifica Modello',
+    'NewModel' => 'Nuovo Modello',
+    'NoModels' => 'Nulla qui',
+    
     'QuantityIndex' => 'Indice Quantità',
-    'Detail' => 'Dettaglio',
+    'Detail' => 'Modello',
     'Details' => 'Dettagli',
     'ListingDetails' => 'Lista Dettagli',
     'DetailList' => 'Lista Dettagli',
