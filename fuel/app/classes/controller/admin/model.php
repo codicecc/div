@@ -10,8 +10,17 @@ class Controller_Admin_Model extends Controller_Admin
 
 	}
 
-	public function action_view($id = null)
-	{
+	public function action_view($id = null){
+
+
+/*
+$model=Model_Model::find(1);
+$model->elements[]=Model_Element::find(6);
+//unset($model->elements[6]);
+$model->save();
+		die();
+*/
+
 		$data['model'] = Model_Model::find($id);
 
 		$this->template->title = "Model";

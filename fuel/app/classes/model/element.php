@@ -1,13 +1,27 @@
 <?php
 class Model_Element extends \Orm\Model{
 	
+	protected static $_many_many = array(
+		'models' => array(
+			'key_from' => 'id',
+			'key_through_from' => 'element_id',
+			'model_to' => 'Model_Model',
+			'key_to' => 'id',
+			'key_through_to' => 'model_id',
+			'table_through' => 'elements_models',
+			'cascade_save' => true,
+			'cascade_delete' => false,
+		)
+    );
+	
 	protected static $_has_many = array('details' => array(
 		'model_to' => 'Model_Detail',
 		'key_from' => 'id',
 		'key_to' => 'element_id',
 		'cascade_save' => true,			
 		'cascade_delete' => true,		
-	));
+		)
+	);
 
 	protected static $_properties = array(
 		'id',

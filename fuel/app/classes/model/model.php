@@ -1,6 +1,19 @@
 <?php
-class Model_Model extends \Orm\Model
-{
+class Model_Model extends \Orm\Model{
+	
+	protected static $_many_many = array(
+		'elements' => array(
+			'key_from' => 'id',
+			'key_through_from' => 'model_id',
+			'model_to' => 'Model_Element',
+			'key_to' => 'id',
+			'key_through_to' => 'element_id',
+			'table_through' => 'elements_models',
+			'cascade_save' => true,
+			'cascade_delete' => false,
+		)
+    );
+        
 	protected static $_properties = array(
 		'id',
 		'name',
