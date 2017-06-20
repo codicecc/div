@@ -1,5 +1,5 @@
 <?php echo Form::open(array("action" => "/admin/measure","class"=>"form-horizontal")); ?>
-<div class="col-xs-3">
+<div class="col-xs-12">
 	<div class="form-group">
 		<div class="panel panel-green">
 			<div class="panel-heading">	

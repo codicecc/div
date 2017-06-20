@@ -74,16 +74,25 @@ class Controller_Admin_Detail extends Controller_Admin
 			$detail->quantity_index = Input::post('quantity_index');
 			$detail->note = Input::post('note');
 
-			if ($detail->save())
-			{
-				Session::set_flash('success', e('Updated detail #' . $id));
-
-				Response::redirect('admin/detail');
+			$checkUniquePair=uniquevaluerules::checkNameFk("details",
+				array("Name","element_id"),
+				array(Input::post('name'),Input::post('element_id')));
+				
+			if($checkUniquePair){
+				Session::set_flash('error', e('Could not save same element.'));
 			}
+			else {
+				if ($detail->save())
+				{
+					Session::set_flash('success', e('Updated detail #' . $id));
 
-			else
-			{
-				Session::set_flash('error', e('Could not update detail #' . $id));
+					Response::redirect('admin/detail');
+				}
+
+				else
+				{
+					Session::set_flash('error', e('Could not update detail #' . $id));
+				}
 			}
 		}
 

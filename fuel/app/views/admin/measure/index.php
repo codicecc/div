@@ -1,10 +1,10 @@
 <h2><?php echo __('admin.ListingMeasures');?></h2>
 <br>
-<div style="float:left;margin:0 4rem 0 0;">
-<?php echo render('admin/measure/_processCSVFile'); ?>
+<div class="col-xs-4">
+	<?php echo render('admin/measure/_processCSVFile'); ?>
 </div>
-<div>
-<?php echo render('admin/measure/_studentFinder'); ?>
+<div class="col-xs-4">
+	<?php echo render('admin/measure/_studentFinder'); ?>
 </div>
 <?php if ($measures): ?>
 <table class="table table-striped">
@@ -46,7 +46,10 @@
 </table>
 
 <?php else: ?>
-<p><?php echo __('admin.NoMeasures');?>.</p>
+<div class="col-xs-12">
+	<?php echo __('admin.NoMeasures');?>.
+</div>
+
 
 
 <?php endif; ?>

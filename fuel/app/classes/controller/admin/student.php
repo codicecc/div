@@ -32,17 +32,26 @@ class Controller_Admin_Student extends Controller_Admin
 					'school_id' => Input::post('school_id'),
 					'note' => Input::post('note'),
 				));
-
-				if ($student and $student->save())
-				{
-					Session::set_flash('success', e('Added student #'.$student->id.'.'));
-
-					Response::redirect('admin/student');
+				
+				$checkUniquePair=uniquevaluerules::checkNameFk("students",
+					array("name","school_id"),
+					array(Input::post('name'),Input::post('school_id')));
+					
+				if($checkUniquePair){
+					Session::set_flash('error', e('Could not save same element.'));
 				}
+				else {
 
-				else
-				{
-					Session::set_flash('error', e('Could not save student.'));
+					if ($student and $student->save()){
+						Session::set_flash('success', e('Added student #'.$student->id.'.'));
+
+						Response::redirect('admin/student');
+					}
+
+					else
+					{
+						Session::set_flash('error', e('Could not save student.'));
+					}
 				}
 			}
 			else
@@ -67,16 +76,25 @@ class Controller_Admin_Student extends Controller_Admin
 			$student->school_id = Input::post('school_id');
 			$student->note = Input::post('note');
 
-			if ($student->save())
-			{
-				Session::set_flash('success', e('Updated student #' . $id));
-
-				Response::redirect('admin/student');
+			$checkUniquePair=uniquevaluerules::checkNameFk("students",
+				array("name","school_id"),
+				array(Input::post('name'),Input::post('school_id')));
+				
+			if($checkUniquePair){
+				Session::set_flash('error', e('Could not save same element.'));
 			}
+			else{
+				if ($student->save())
+				{
+					Session::set_flash('success', e('Updated student #' . $id));
 
-			else
-			{
-				Session::set_flash('error', e('Could not update student #' . $id));
+					Response::redirect('admin/student');
+				}
+
+				else
+				{
+					Session::set_flash('error', e('Could not update student #' . $id));
+				}
 			}
 		}
 
