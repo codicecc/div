@@ -371,10 +371,6 @@ return array(
 					'text'   => 'Models',
 					'rights' => 'model',
 					'sub' => array(
-						 '/admin/model' => array(
-								'text'   => 'Model',
-								'rights' => 'model'
-						 ),
 						 '/admin/element' => array(
 								'text'   => 'Element',
 								'rights' => 'element'
@@ -382,6 +378,10 @@ return array(
 						 '/admin/detail' => array(
 								'text'   => 'Detail',
 								'rights' => 'detail'
+						 ),
+						 '/admin/model' => array(
+								'text'   => 'Model',
+								'rights' => 'model'
 						 ),
 					)
 			 ),

@@ -35,6 +35,14 @@ return array(
     'EditingStudent' => 'Modifica Studente',
     'NewStudent' => 'Nuovo Studente',
     
+    'Detail' => 'Dettaglio',
+    'Details' => 'Dettagli',
+    'ListingDetails' => 'Lista Dettagli',
+    'DetailList' => 'Lista Dettagli',
+    'EditingDetail' => 'Modifica Dettaglio',
+    'NewDetail' => 'Nuovo Dettaglio',
+    'NoDetails' => 'Nulla qui',
+    
     'Element' => 'Elemento',
     'Elements' => 'Elementi',
     'ListingElements' => 'Lista Elementi',

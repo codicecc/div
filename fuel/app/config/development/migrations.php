@@ -13,6 +13,7 @@ return array(
         4 => '005_create_measures',
         5 => '006_create_sizes',
         6 => '007_create_elements',
+        7 => '008_create_details',
       ),
     ),
     'module' => 

@@ -8,7 +8,8 @@ class Model_Student extends \Orm\Model{
 			'key_to' => 'student_id',
 			'cascade_save' => true,			
 			'cascade_delete' => true,		
-		));
+		)
+	);
 	
 	protected static $_properties = array(
 		'id',

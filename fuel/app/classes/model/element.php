@@ -1,6 +1,14 @@
 <?php
-class Model_Element extends \Orm\Model
-{
+class Model_Element extends \Orm\Model{
+	
+	protected static $_has_many = array('details' => array(
+		'model_to' => 'Model_Detail',
+		'key_from' => 'id',
+		'key_to' => 'element_id',
+		'cascade_save' => true,			
+		'cascade_delete' => true,		
+	));
+
 	protected static $_properties = array(
 		'id',
 		'name',
@@ -20,13 +28,12 @@ class Model_Element extends \Orm\Model
 		),
 	);
 
-	public static function validate($factory)
-	{
+	public static function validate($factory){
+		
 		$val = Validation::forge($factory);
 		$val->add_field('name', 'Name', 'required|max_length[255]');
-		$val->add_field('note', 'Note', 'required');
+		//$val->add_field('note', 'Note', 'required');
 
 		return $val;
 	}
-
 }

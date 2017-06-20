@@ -1,17 +1,12 @@
 <?php
-class Model_School extends \Orm\Model{
+class Model_Detail extends \Orm\Model{
 	
-	protected static $_has_many = array('students' => array(
-		'model_to' => 'Model_Student',
-		'key_from' => 'id',
-		'key_to' => 'school_id',
-		'cascade_save' => true,			
-		'cascade_delete' => true,		
-	));
+	protected static $_belongs_to = array('element');
 	
 	protected static $_properties = array(
 		'id',
 		'name',
+		'element_id',
 		'note',
 		'created_at',
 		'updated_at',
@@ -28,10 +23,13 @@ class Model_School extends \Orm\Model{
 		),
 	);
 
-	public static function validate($factory)
-	{
+	public static function validate($factory){
+				
 		$val = Validation::forge($factory);
 		$val->add_field('name', 'Name', 'required|max_length[255]');
+		$val->add_field('element_id', 'Element Id', 'required|valid_string[numeric]');
+		//$val->add_field('note', 'Note', 'required');
+
 		return $val;
 	}
 
