@@ -34,6 +34,15 @@ return array(
     'StudentList' => 'Lista Studenti',
     'EditingStudent' => 'Modifica Studente',
     'NewStudent' => 'Nuovo Studente',
+    
+    'Element' => 'Elemento',
+    'Elements' => 'Elementi',
+    'ListingElements' => 'Lista Elementi',
+    'ElementList' => 'Lista Elementi',
+    'EditingElement' => 'Modifica Elemento',
+    'NewElement' => 'Nuovo Elemento',
+    'NoElements' => 'Nulla qui',
+
 
     'Body_parts' => 'Parti del corpo',
     'Body_part' => 'Parte del corpo',

@@ -12,6 +12,7 @@ return array(
         3 => '004_create_body_parts',
         4 => '005_create_measures',
         5 => '006_create_sizes',
+        6 => '007_create_elements',
       ),
     ),
     'module' => 
