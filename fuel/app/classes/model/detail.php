@@ -7,6 +7,7 @@ class Model_Detail extends \Orm\Model{
 		'id',
 		'name',
 		'element_id',
+		'quantity_index',
 		'note',
 		'created_at',
 		'updated_at',
@@ -28,6 +29,7 @@ class Model_Detail extends \Orm\Model{
 		$val = Validation::forge($factory);
 		$val->add_field('name', 'Name', 'required|max_length[255]');
 		$val->add_field('element_id', 'Element Id', 'required|valid_string[numeric]');
+		$val->add_field('quantity_index', 'Quantity Index', 'required|valid_string[decimal]');
 		//$val->add_field('note', 'Note', 'required');
 
 		return $val;

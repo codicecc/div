@@ -7,6 +7,9 @@
 	<strong><?php echo __('admin.Element');?>:</strong>
 	<?php echo $detail->element->name; ?></p>
 <p>
+	<strong><?php echo __('admin.QuantityIndex');?>:</strong>
+	<?php echo $detail->quantity_index; ?></p>
+<p>
 	<strong><?php echo __('admin.Note');?>:</strong>
 	<?php echo $detail->note; ?></p>
 

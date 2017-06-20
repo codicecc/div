@@ -35,6 +35,7 @@ return array(
     'EditingStudent' => 'Modifica Studente',
     'NewStudent' => 'Nuovo Studente',
     
+    'QuantityIndex' => 'Indice Quantità',
     'Detail' => 'Dettaglio',
     'Details' => 'Dettagli',
     'ListingDetails' => 'Lista Dettagli',

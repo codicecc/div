@@ -6,6 +6,7 @@
 		<tr>
 			<th><?php echo __('admin.Name');?></th>
 			<th><?php echo __('admin.Element');?></th>
+			<th><?php echo __('admin.QuantityIndex');?></th>
 			<th><?php echo __('admin.Note');?></th>
 			<th></th>
 		</tr>
@@ -15,6 +16,7 @@
 
 			<td><?php echo $item->name; ?></td>
 			<td><?php echo $item->element->name; ?></td>
+			<td><?php echo $item->quantity_index; ?></td>
 			<td><?php echo $item->note; ?></td>
 			<td>
 				<?php

@@ -4,7 +4,13 @@
 		<div class="form-group">
 			<?php echo Form::label(__('admin.Name'), 'name', array('class'=>'control-label')); ?>
 
-				<?php echo Form::input('name', Input::post('name', isset($detail) ? $detail->name : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>'Name')); ?>
+				<?php echo Form::input('name', Input::post('name', isset($detail) ? $detail->name : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>__('admin.Name'))); ?>
+
+		</div>
+		<div class="form-group">
+			<?php echo Form::label(__('admin.QuantityIndex'), 'quantity_index', array('class'=>'control-label')); ?>
+
+				<?php echo Form::input('quantity_index', Input::post('quantity_index', isset($detail) ? $detail->quantity_index : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>__('admin.QuantityIndex'))); ?>
 
 		</div>
 		<div class="form-group">

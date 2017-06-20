@@ -30,6 +30,7 @@ class Controller_Admin_Detail extends Controller_Admin
 				$detail = Model_Detail::forge(array(
 					'name' => Input::post('name'),
 					'element_id' => Input::post('element_id'),
+					'quantity_index' => Input::post('quantity_index'),
 					'note' => Input::post('note'),
 				));
 				
@@ -70,6 +71,7 @@ class Controller_Admin_Detail extends Controller_Admin
 		{
 			$detail->name = Input::post('name');
 			$detail->element_id = Input::post('element_id');
+			$detail->quantity_index = Input::post('quantity_index');
 			$detail->note = Input::post('note');
 
 			if ($detail->save())
@@ -91,6 +93,7 @@ class Controller_Admin_Detail extends Controller_Admin
 			{
 				$detail->name = $val->validated('name');
 				$detail->element_id = $val->validated('element_id');
+				$detail->quantity_index = $val->validated('quantity_index');
 				$detail->note = $val->validated('note');
 
 				Session::set_flash('error', $val->error());
