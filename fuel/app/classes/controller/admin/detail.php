@@ -1,13 +1,37 @@
 <?php
-class Controller_Admin_Detail extends Controller_Admin
-{
-
-	public function action_index()
-	{
-		$data['details'] = Model_Detail::find('all');
+class Controller_Admin_Detail extends Controller_Admin{	
+	
+	public function action_index($element_id=null){
+		
+		$element_id=Input::post('element_id')?Input::post('element_id'):$element_id;
+		if(isset($element_id)){
+			$data['details'] = Model_Detail::query()
+				->where('element_id',$element_id)
+				->get();
+		}
+		else{
+			$config = array(
+				'pagination_url' => '/admin/detail',
+				'total_items'    => Model_Detail::count(),
+				'per_page'       => 100,
+				'uri_segment'    => 'page',
+			);
+			
+			// Create a pagination instance named 'mypagination'
+			$pagination = Pagination::forge('mypagination', $config);
+		  
+			$data['details'] = Model_Detail::query()
+				->order_by('created_at','desc')
+				->rows_offset($pagination->offset)
+				->rows_limit($pagination->per_page)
+				->get();
+			
+			// we pass the object, it will be rendered when echo'd in the view
+			$data['pagination'] = $pagination;
+			
+		}
 		$this->template->title = "Details";
 		$this->template->content = View::forge('admin/detail/index', $data);
-
 	}
 
 	public function action_view($id = null)

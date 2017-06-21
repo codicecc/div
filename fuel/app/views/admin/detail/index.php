@@ -1,5 +1,8 @@
 <h2><?php echo __('admin.ListingDetails');?></h2>
 <br>
+<div class="col-xs-4">
+	<?php echo render('admin/detail/_elementFinder'); ?>
+</div>
 <?php if ($details): ?>
 <table class="table table-striped">
 	<thead>

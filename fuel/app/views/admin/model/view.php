@@ -3,6 +3,12 @@
 <p>
 	<strong><?php echo __('admin.Name');?>:</strong>
 	<?php echo $model->name; ?></p>
+
+<p>	
+	<strong><?php echo __('admin.ElementSelecting');?>:</strong>
+	<?php echo render('admin/element/list', array('model' => $model)); ?>
+</p>
+	
 <p>
 	<strong><?php echo __('admin.DifficultIndex');?>:</strong>
 	<?php echo $model->difficult_index; ?></p>
