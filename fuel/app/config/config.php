@@ -343,87 +343,87 @@ return array(
 	'navigation_bar' => array(
 			 'measures' => array(
 					'text'   => 'Measures',
-					'rights' => 'user',
+					'rights' => 'Controller_Admin_Measures.menu',
 					'sub' => array(
 						 '/admin/school' => array(
 								'text'   => 'School',
-								'rights' => 'school'
+								'rights' => 'Controller_Admin_School.index'
 						 ),
 						 '/admin/student' => array(
 								'text'   => 'Student',
-								'rights' => 'student'
+								'rights' => 'Controller_Admin_Student.index'
 						 ),
 						 '/admin/measure' => array(
 								'text'   => 'Measure',
-								'rights' => 'measure'
+								'rights' => 'Controller_Admin_Measure.index'
 						 ),
 						 '/admin/body/part' => array(
 								'text'   => 'BodyPart',
-								'rights' => 'body_part'
+								'rights' => 'Controller_Admin_Body_Part.index'
 						 ),
 						 '/admin/size' => array(
 								'text'   => 'Size',
-								'rights' => 'size'
+								'rights' => 'Controller_Admin_Size.index'
 						 ),
 					)
 			 ),
 			'models' => array(
 					'text'   => 'Models',
-					'rights' => 'model',
+					'rights' => 'Controller_Admin_Model.menu',
 					'sub' => array(
 						 '/admin/element' => array(
 								'text'   => 'Element',
-								'rights' => 'element'
+								'rights' => 'Controller_Admin_Element.index'
 						 ),
 						 '/admin/detail' => array(
 								'text'   => 'Detail',
-								'rights' => 'detail'
+								'rights' => 'Controller_Admin_Detail.index'
 						 ),
 						 '/admin/model' => array(
 								'text'   => 'Model',
-								'rights' => 'model'
+								'rights' => 'Controller_Admin_Model.index'
 						 ),
 					)
 			 ),
 			'orders' => array(
 					'text'   => 'Orders',
-					'rights' => 'order',
+					'rights' => 'Controller_Admin_Order.menu',
 					'sub' => array(
 						 '/admin/order' => array(
 								'text'   => 'Order',
-								'rights' => 'order'
+								'rights' => 'Controller_Admin_Orders.index'
 						 ),
 						 '/admin/dress' => array(
 								'text'   => 'Dress',
-								'rights' => 'dress'
+								'rights' => 'Controller_Admin_Dress.index'
 						 )
 					)
 			 ),
 			'reports' => array(
 					'text'   => 'Reports',
-					'rights' => 'report',
+					'rights' => 'Controller_Admin_Report.menu',
 					'sub' => array(
-						 '/admin/order' => array(
+						 '/admin/report' => array(
 								'text'   => 'Report',
-								'rights' => 'report'
+								'rights' => 'Controller_Admin_Orders.index'
 						 )
 					)
 			 ),
 			 '/admin/users' => array(
 					'text'   => 'Users',
-					'rights' => 'users'
+					'rights' => 'Controller_Admin_Users.menu'
 			 ),
 			'help' => array(
 					'text'   => 'Help',
-					'rights' => 'help',
+					'rights' => 'Controller_Admin_Help.menu',
 					'sub' => array(
 						 '/admin/help' => array(
 								'text'   => 'Help',
-								'rights' => 'help'
+								'rights' => 'Controller_Admin_Help.index'
 						 ),
 						 '/admin/info' => array(
 								'text'   => 'Info',
-								'rights' => 'info'
+								'rights' => 'Controller_Admin_Info.index'
 						 ),
 						 
 					)

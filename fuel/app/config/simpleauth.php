@@ -87,20 +87,34 @@ return array(
       0 => array('name' => 'Generic', 'roles' => array('generic')),
       2 => array('name' => 'adminAreaAccess', 'roles' => array('adminareaaccess')),	//SUBSCRIBER
       10 => array('name' => 'Subscriber', 'roles' => array('subscriber','adminareaaccess')),	//SUBSCRIBER
-      20 => array('name' => 'Editor', 'roles' => array('editor','adminareaaccess')),	//EDITOR
+      20 => array('name' => 'Editor', 'roles' => array('subscriber','editor','adminareaaccess')),	//EDITOR
       30 => array('name' => 'Manager', 'roles' => array('manager','adminareaaccess')),	//MANAGER
       100  => array('name' => 'Admin', 'roles' => array('editor', 'manager', 'admin')),
 	),
 
 	'roles' => array(
 	 	'banned'     => false,
+		'generic'     => false,
 		'admin'      => true,
 		'adminareaaccess' => array(
 			'Controller_Admin' => array('index','dashboard'),
 			'Controller_Admin_Users' => array(
 				'viewprofile',
 			),
-		)
+		),
+		'subscriber' => array(
+			'Controller_Admin_Help' => array(
+				'menu',
+				'index',
+			),		
+		),
+		'editor' => array(
+			'Controller_Admin_Info' => array(
+				'index',
+			),
+		),
+		'manager' => array(
+		),
 		/*
 	 	 'scan' => array(
 			'Controller_Admin' => array('index'),
