@@ -65,13 +65,14 @@ $model->save();
 
 	}
 
-	public function action_edit($id = null)
-	{
+	public function action_edit($id = null) {
+		
+		
 		$model = Model_Model::find($id);
 		$val = Model_Model::validate('edit');
-
-		if ($val->run())
-		{
+	
+		if ($val->run()){
+		
 			$model->name = Input::post('name');
 			$model->difficult_index = Input::post('difficult_index');
 			$model->note = Input::post('note');
@@ -88,24 +89,17 @@ $model->save();
 				Session::set_flash('error', e('Could not update model #' . $id));
 			}
 		}
-
-		else
-		{
-			if (Input::method() == 'POST')
-			{
+		else{
+			if (Input::method() == 'POST'){
 				$model->name = $val->validated('name');
 				$model->difficult_index = $val->validated('difficult_index');
 				$model->note = $val->validated('note');
-
 				Session::set_flash('error', $val->error());
 			}
-
 			$this->template->set_global('model', $model, false);
 		}
-
-		$this->template->title = "Models";
+		$this->template->title = "Models";	
 		$this->template->content = View::forge('admin/model/edit');
-
 	}
 
 	public function action_delete($id = null)

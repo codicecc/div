@@ -35,7 +35,7 @@ return array(
     'EditingStudent' => 'Modifica Studente',
     'NewStudent' => 'Nuovo Studente',
     
-    'Difficult_index' => 'Indice Difficoltà',
+    'DifficultIndex' => 'Indice Difficoltà',
     'Model' => 'Modello',
     'Models' => 'Modelli',
     'ListingModels' => 'Lista Modelli',

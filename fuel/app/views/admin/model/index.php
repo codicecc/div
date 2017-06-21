@@ -5,7 +5,7 @@
 	<thead>
 		<tr>
 			<th><?php echo __('admin.Name');?></th>
-			<th><?php echo __('admin.Difficult_index');?></th>
+			<th><?php echo __('admin.DifficultIndex');?></th>
 			<th><?php echo __('admin.Note');?></th>
 			<th></th>
 		</tr>

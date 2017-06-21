@@ -34,8 +34,8 @@ class Model_Model extends \Orm\Model{
 		),
 	);
 
-	public static function validate($factory)
-	{
+	public static function validate($factory){
+		
 		$val = Validation::forge($factory);
 		$val->add_field('name', 'Name', 'required|max_length[255]');
 		$val->add_field('difficult_index', 'Difficult Index', 'required');
