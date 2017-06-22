@@ -16,6 +16,7 @@ return array(
         7 => '008_create_details',
         8 => '009_create_models',
         9 => '010_create_elements_models',
+        10 => '011_create_details_models',
       ),
     ),
     'module' => 

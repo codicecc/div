@@ -3,6 +3,18 @@ class Model_Detail extends \Orm\Model{
 	
 	protected static $_belongs_to = array('element');
 	
+	protected static $_many_many = array(
+		'models' => array(
+			'key_from' => 'id',
+			'key_through_from' => 'detail_id',
+			'model_to' => 'Model_Model',
+			'key_to' => 'id',
+			'key_through_to' => 'model_id',
+			'table_through' => 'details_models',
+			'cascade_save' => true,
+			'cascade_delete' => false,
+		)
+    );	
 	protected static $_properties = array(
 		'id',
 		'name',
