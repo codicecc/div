@@ -9,7 +9,7 @@ class Create_attributes
 		\DBUtil::create_table('attributes', array(
 			'id' => array('constraint' => 11, 'type' => 'int', 'auto_increment' => true, 'unsigned' => true),
 			'name' => array('constraint' => 255, 'type' => 'varchar'),
-			'details_model_id' => array('constraint' => 11, 'type' => 'int'),
+			'detail_model_id' => array('constraint' => 11, 'type' => 'int'),
 			'created_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
 			'updated_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
 

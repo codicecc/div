@@ -2,10 +2,16 @@
 class Controller_Admin_Model extends Controller_Admin{
 
 	public function action_test(){
-		$model=Model_Model::find(1);
-		$model->elements[]=Model_Element::find(6);
-		debug::dump($model->elements);
-
+		
+		$Detail_Model=Model_Detail_Model::find(1);
+		echo "<br />id: ";
+		echo $Detail_Model->id;
+		echo "<br />detail_id: ";
+		echo $Detail_Model->detail_id;
+		echo "<br />model_id: ";
+		echo $Detail_Model->model_id;
+		echo "<br />";
+		
 /*
 $model=Model_Model::find(1);
 $model->elements[]=Model_Element::find(6);

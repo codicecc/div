@@ -1,7 +1,7 @@
 <?php
 
-class Model_Attribute extends \Orm\Model
-{
+class Model_Attribute extends \Orm\Model{
+	
 	protected static $_properties = array(
 		'id',
 		'name',
