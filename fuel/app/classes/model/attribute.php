@@ -5,7 +5,7 @@ class Model_Attribute extends \Orm\Model{
 	protected static $_properties = array(
 		'id',
 		'name',
-		'details_model_id',
+		'detail_model_id',
 		'created_at',
 		'updated_at',
 	);
@@ -22,5 +22,4 @@ class Model_Attribute extends \Orm\Model{
 	);
 
 	protected static $_table_name = 'attributes';
-
 }

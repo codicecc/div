@@ -18,12 +18,18 @@ class Model_Detail_Model extends \Orm\Model{
 		'id',
 		'detail_id',
 		'model_id',
+		'created_at',
+		'updated_at',
 	);
 
 	protected static $_observers = array(
 		'Orm\Observer_CreatedAt' => array(
+			'events' => array('before_insert'),
+			'mysql_timestamp' => false,
 		),
 		'Orm\Observer_UpdatedAt' => array(
+			'events' => array('before_save'),
+			'mysql_timestamp' => false,
 		),
 	);
 }

@@ -14,6 +14,9 @@ class Create_attributes
 			'updated_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
 
 		), array('id'));
+		
+		//Adding UNIQUE constraint to 'name' column and 'detail_model_id' column 
+		\DB::query("ALTER TABLE `attributes` ADD UNIQUE( `name`, `detail_model_id`)")->execute();
 	}
 
 	public function down()

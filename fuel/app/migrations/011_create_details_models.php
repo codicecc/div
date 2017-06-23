@@ -10,6 +10,8 @@ class Create_details_models
 			'id' => array('constraint' => 11, 'type' => 'int', 'auto_increment' => true, 'unsigned' => true),
 			'detail_id' => array('constraint' => 11, 'type' => 'int'),
 			'model_id' => array('constraint' => 11, 'type' => 'int'),
+			'created_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
+			'updated_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
 		), array('id'));
 		
 		//Adding UNIQUE constraint to 'element_id' column and 'model_id' column 

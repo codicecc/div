@@ -3,14 +3,42 @@ class Controller_Admin_Model extends Controller_Admin{
 
 	public function action_test(){
 		
-		$Detail_Model=Model_Detail_Model::find(1);
-		echo "<br />id: ";
-		echo $Detail_Model->id;
-		echo "<br />detail_id: ";
-		echo $Detail_Model->detail_id;
-		echo "<br />model_id: ";
-		echo $Detail_Model->model_id;
-		echo "<br />";
+		$model=Model_Model::find(1);
+		$model->elements[]=Model_Element::find(6);
+		$model->save();
+
+				
+		/*
+		 * Create new attribute related to a existing Detail_Model
+		 *	$detail_model_id
+		 * 	$attribute_name
+		 */
+		$detail_model_id=1;
+		$attribute_name="lycra";
+		
+		$Detail_Model=Model_Detail_Model::find($detail_model_id); 		
+		$attribute=DB::select('id')->from("attributes")->where('detail_model_id', '=', $Detail_Model->id)->execute();
+  		if(count($attribute)>0){
+			$Detail_Model->attribute=Model_Attribute::find($attribute[0]["id"]);
+		}
+		else{
+			$Detail_Model->attribute=new Model_Attribute();
+		}
+		$Detail_Model->attribute->name=$attribute_name;
+		$Detail_Model->save();
+
+		
+  		//$Detail_Model->save();
+  		
+  		/*
+  		echo $Detail_Model->id;
+  		die();
+  		*/
+  		
+  		//$Detail_Model->attribute=new Model_Attribute();
+  		//$Detail_Model->attribute = Model_Attribute::forge();
+		//$Detail_Model->attribute->name=$attribute_name;
+		//$Detail_Model->save();
 		
 /*
 $model=Model_Model::find(1);
