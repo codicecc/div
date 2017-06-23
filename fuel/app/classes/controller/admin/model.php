@@ -5,6 +5,14 @@ class Controller_Admin_Model extends Controller_Admin{
 		$model=Model_Model::find(1);
 		$model->elements[]=Model_Element::find(6);
 		debug::dump($model->elements);
+
+/*
+$model=Model_Model::find(1);
+$model->elements[]=Model_Element::find(6);
+//unset($model->elements[6]);
+$model->save();
+		die();
+*/
 		
 		echo"This is a test!";
 		die();
@@ -19,15 +27,6 @@ class Controller_Admin_Model extends Controller_Admin{
 	}
 
 	public function action_view($id = null){
-
-
-/*
-$model=Model_Model::find(1);
-$model->elements[]=Model_Element::find(6);
-//unset($model->elements[6]);
-$model->save();
-		die();
-*/
 
 		$data['model'] = Model_Model::find($id);
 
