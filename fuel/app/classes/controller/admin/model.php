@@ -1,7 +1,15 @@
 <?php
-class Controller_Admin_Model extends Controller_Admin
-{
+class Controller_Admin_Model extends Controller_Admin{
 
+	public function action_test(){
+		$model=Model_Model::find(1);
+		$model->elements[]=Model_Element::find(6);
+		debug::dump($model->elements);
+		
+		echo"This is a test!";
+		die();
+	}
+	
 	public function action_index()
 	{
 		$data['models'] = Model_Model::find('all');
