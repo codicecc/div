@@ -160,5 +160,20 @@ $model->save();
 		Response::redirect('admin/model');
 
 	}
+	public function action_change_element_status(){
+		if (Input::is_ajax()) {
+			$model = Model_Model::find(intval(Input::post('model_id')));
+			$element = Model_Element::find(intval(Input::post('element_id')));
+			$status=intval(Input::post('status'));
+			if($status){
+				$model->elements[]=$element;
+			}
+			else{
+				unset($model->elements[$element->id]);
+			}
+			$model->save();
+		}
+		return false; // we return no content at all
+	}
 
 }

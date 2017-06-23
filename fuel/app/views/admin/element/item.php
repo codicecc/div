@@ -16,6 +16,9 @@
 			<?php echo $checked ? 'checked' : ''; ?>
 			>
 		<label for="<?php echo $input_id; ?>">
-			<?php echo $element->name; ?> <a target="_blank" href="/admin/detail/index/<?php echo $element->id;?>"><i class="fa fa-external-link fa-fw"></i></a>
+			<?php echo $element->name; ?>
+			<a target="_blank" href="/admin/detail/index/<?php echo $element->id;?>">
+				<i class="fa fa-external-link fa-fw"></i>
+			</a>
 		</label>
 	</li>

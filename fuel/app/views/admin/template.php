@@ -8,16 +8,23 @@
 		'custom.css',
 		'font-awesome.min.css',
 		'sb-admin-2.min.css',
+		'modal.css',
 		));
 	?>
 	<style>
 		body { margin: 50px; }
 	</style>
+	<script type="text/javascript">
+	<?php
+		echo 'var uriBase = '.Format::forge(Uri::base())->to_json().';';
+	?>
+	</script>
 	<?php echo Asset::js(array(
 		'http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js',
 		'bootstrap.js',
+		'elementList.js',
+		'modal.js',
 		//'custom.js',
-		//'codesource-ajax.js'
 	)); ?>
 	<script>
 		$(function(){ $('.topbar').dropdown(); });
@@ -108,5 +115,6 @@
 			</p>
 		</footer>
 	</div>
+	<div class="modal"><!-- LOADING MODAL --></div>
 </body>
 </html>

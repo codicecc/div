@@ -1,5 +1,4 @@
-
-<ul id="element_list" data-project_id="<?php echo $model->id; ?>">
+<ul id="element_list" data-model_id="<?php echo $model->id; ?>">
 <?php 
 foreach (Model_Element::find('all') as $element) {
 ?>
