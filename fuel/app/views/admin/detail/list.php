@@ -1,4 +1,4 @@
-<ul id="detail_list" data-element_id="<?php echo $element->id; ?>">
+<ul id="detail_list_<?php echo $element->id; ?>" data-element_id="<?php echo $element->id; ?>">
 <?php 
 $element_details=Model_detail::find('all', array (
 			'where' => array(

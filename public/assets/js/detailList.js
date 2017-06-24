@@ -3,6 +3,12 @@ $(document).ready(function() {
 	// Checkbox synchronization
 	$('#element_list input.detail[type=checkbox]').change(function() {
 		var $this = $(this);
+		
+		if($this.is(':checked')){
+			$('#'+$this.parents('li.element_list_item').attr('id')+'  input.element[type=checkbox]').attr('checked', true);
+			//$this.parents('li.element_list_item').attr('checked', true);
+		}
+
 		$.post(
 			uriBase + 'admin/model/change_detail_status', {
 				'detail_id': $this.data('detail_id'),

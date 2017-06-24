@@ -177,6 +177,15 @@ $model->save();
 			}
 			else{
 				unset($model->elements[$element->id]);
+				$element_details=Model_detail::find('all', array (
+						'where' => array(
+						array('element_id',$element->id)
+						)
+					)
+				);
+				foreach ($element_details as $detail) {
+					unset($model->details[$detail->id]);
+				}
 			}
 			$model->save();
 		}
@@ -186,9 +195,11 @@ $model->save();
 		if (Input::is_ajax()) {
 			$model = Model_Model::find(intval(Input::post('model_id')));
 			$detail = Model_Detail::find(intval(Input::post('detail_id')));
+			$element = Model_Element::find($detail->element_id);
 			$status=intval(Input::post('status'));
 			if($status){
 				$model->details[]=$detail;
+				$model->elements[]=$element;
 			}
 			else{
 				unset($model->details[$detail->id]);

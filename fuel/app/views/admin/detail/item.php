@@ -1,17 +1,16 @@
 <?php
 $input_id = 'detail_list_'.$detail->id;
-
-//debug::dump($detail->models);
 ?>
 	<li class="detail_list_item">
 		<?php
 			$checked=false;
-			if($detail->models)$checked=true;
-			 /*
-			 foreach($detail->models as $detail_model ) {
-				if($detail->id==$detail_model->id)$checked=true;
+			foreach($model->details as $d){
+				/*
+				debug::dump($d->id);
+				debug::dump($detail->id);
+				*/
+				if($d->id==$detail->id)$checked=true;
 			}
-			*/
 		?>
 		<input
 			type="checkbox"

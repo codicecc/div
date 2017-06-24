@@ -1,7 +1,7 @@
 <?php
 	$input_id = 'element_list_'.$element->id;
 ?>
-	<li class="element_list_item">
+	<li class="element_list_item" id="element_list_item_<?php echo $element->id;?>">
 		<?php
 			$checked=false;
 			foreach($element->models as $element_model ) {
