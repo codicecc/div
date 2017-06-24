@@ -182,5 +182,19 @@ $model->save();
 		}
 		return false; // we return no content at all
 	}
-
+	public function action_change_detail_status(){
+		if (Input::is_ajax()) {
+			$model = Model_Model::find(intval(Input::post('model_id')));
+			$detail = Model_Detail::find(intval(Input::post('detail_id')));
+			$status=intval(Input::post('status'));
+			if($status){
+				$model->details[]=$detail;
+			}
+			else{
+				unset($model->details[$detail->id]);
+			}
+			$model->save();
+		}
+		return false; // we return no content at all
+	}
 }

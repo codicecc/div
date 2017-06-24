@@ -14,6 +14,7 @@
 			id="<?php echo $input_id; ?>"
 			data-element_id="<?php echo $element->id; ?>"
 			<?php echo $checked ? 'checked' : ''; ?>
+			class="element"
 			>
 		<label for="<?php echo $input_id; ?>">
 			<?php echo $element->name; ?>

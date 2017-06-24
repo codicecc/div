@@ -23,6 +23,7 @@
 		'http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js',
 		'bootstrap.js',
 		'elementList.js',
+		'detailList.js',
 		'modal.js',
 		//'custom.js',
 	)); ?>
