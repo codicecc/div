@@ -1,7 +1,7 @@
 <?php
 	$input_id = 'element_list_'.$element->id;
 ?>
-	<li>
+	<li class="element_list_item">
 		<?php
 			$checked=false;
 			foreach($element->models as $element_model ) {
@@ -21,4 +21,6 @@
 				<i class="fa fa-external-link fa-fw"></i>
 			</a>
 		</label>
+		<?php echo render('admin/detail/list', array('element' => $element,'model' => $model)); ?>
 	</li>
+

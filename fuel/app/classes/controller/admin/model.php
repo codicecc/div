@@ -3,6 +3,13 @@ class Controller_Admin_Model extends Controller_Admin{
 
 	public function action_test(){
 		
+		die();
+		debug::dump(count(Model_Attribute::find('all')));
+		$Detail_Model=Model_Detail_Model::find(1);
+		$Detail_Model->delete();
+		debug::dump(count(Model_Attribute::find('all')));
+		die();
+		
 		$model=Model_Model::find(1);
 		$model->elements[]=Model_Element::find(6);
 		$model->save();
