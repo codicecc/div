@@ -205,6 +205,7 @@ $model->save();
 				unset($model->details[$detail->id]);
 			}
 			$model->save();
+			//Response::redirect('admin/model/view/'.$model->id);
 		}
 		return false; // we return no content at all
 	}

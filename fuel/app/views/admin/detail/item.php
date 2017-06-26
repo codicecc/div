@@ -5,10 +5,6 @@ $input_id = 'detail_list_'.$detail->id;
 		<?php
 			$checked=false;
 			foreach($model->details as $d){
-				/*
-				debug::dump($d->id);
-				debug::dump($detail->id);
-				*/
 				if($d->id==$detail->id)$checked=true;
 			}
 		?>
@@ -25,5 +21,6 @@ $input_id = 'detail_list_'.$detail->id;
 			<a target="_blank" href="/admin/detail/view/<?php echo $detail->id;?>">
 				<i class="fa fa-external-link fa-fw"></i>
 			</a>
+			<?php echo render('admin/attribute/item', array('detail' => $detail, 'model' => $model)); ?>
 		</label>
 	</li>

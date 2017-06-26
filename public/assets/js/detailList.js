@@ -8,6 +8,8 @@ $(document).ready(function() {
 			$('#'+$this.parents('li.element_list_item').attr('id')+'  input.element[type=checkbox]').attr('checked', true);
 			//$this.parents('li.element_list_item').attr('checked', true);
 		}
+		else{
+		}
 
 		$.post(
 			uriBase + 'admin/model/change_detail_status', {
