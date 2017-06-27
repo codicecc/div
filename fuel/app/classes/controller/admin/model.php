@@ -2,61 +2,7 @@
 class Controller_Admin_Model extends Controller_Admin{
 
 	public function action_test(){
-		
-		die();
-		debug::dump(count(Model_Attribute::find('all')));
-		$Detail_Model=Model_Detail_Model::find(1);
-		$Detail_Model->delete();
-		debug::dump(count(Model_Attribute::find('all')));
-		die();
-		
-		$model=Model_Model::find(1);
-		$model->elements[]=Model_Element::find(6);
-		$model->save();
 
-				
-		/*
-		 * Create new attribute related to a existing Detail_Model
-		 *	$detail_model_id
-		 * 	$attribute_name
-		 */
-		$detail_model_id=1;
-		$attribute_name="lycra";
-		
-		$Detail_Model=Model_Detail_Model::find($detail_model_id); 		
-		$attribute=DB::select('id')->from("attributes")->where('detail_model_id', '=', $Detail_Model->id)->execute();
-  		if(count($attribute)>0){
-			$Detail_Model->attribute=Model_Attribute::find($attribute[0]["id"]);
-		}
-		else{
-			$Detail_Model->attribute=new Model_Attribute();
-		}
-		$Detail_Model->attribute->name=$attribute_name;
-		$Detail_Model->save();
-
-		
-  		//$Detail_Model->save();
-  		
-  		/*
-  		echo $Detail_Model->id;
-  		die();
-  		*/
-  		
-  		//$Detail_Model->attribute=new Model_Attribute();
-  		//$Detail_Model->attribute = Model_Attribute::forge();
-		//$Detail_Model->attribute->name=$attribute_name;
-		//$Detail_Model->save();
-		
-/*
-$model=Model_Model::find(1);
-$model->elements[]=Model_Element::find(6);
-//unset($model->elements[6]);
-$model->save();
-		die();
-*/
-		
-		echo"This is a test!";
-		die();
 	}
 	
 	public function action_index()
@@ -184,6 +130,8 @@ $model->save();
 					)
 				);
 				foreach ($element_details as $detail) {
+					if(hmodel::get_attribute($model->id,$detail->id))
+						$this->attributeDelete($model->id,$detail->id);
 					unset($model->details[$detail->id]);
 				}
 			}
@@ -202,11 +150,18 @@ $model->save();
 				$model->elements[]=$element;
 			}
 			else{
+				if(hmodel::get_attribute($model->id,$detail->id))
+					$this->attributeDelete($model->id,$detail->id);
 				unset($model->details[$detail->id]);
+				
 			}
 			$model->save();
 			//Response::redirect('admin/model/view/'.$model->id);
 		}
 		return false; // we return no content at all
+	}
+	private function attributeDelete($model_id,$detail_id){
+		$Attribute_Model=Model_Attribute::find(hmodel::get_attribute($model_id,$detail_id));
+		$Attribute_Model->delete();
 	}
 }
