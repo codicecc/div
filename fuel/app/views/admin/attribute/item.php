@@ -10,15 +10,17 @@ $detail_model_object=DB::select('*')->from("details_models")
 	->execute();
 	
 	$detail_model_id=$detail_model_object[0]["id"];
-	if($detail_model_id){
+	if($detail_model_id||0==0){
 ?>
 			<input type="text"
 				class="attribute"
 				autocomplete="off"
 				placeholder="Attribute"
-				data-model_id=<?php echo $model->id;?>
-				data-detail_id=<?php echo $detail->id;?>
-				data-detail_model_id=<?php echo $detail_model_id;?>
+				data-model_id="<?php echo $model->id;?>"
+				data-detail_id="<?php echo $detail->id;?>"
+				<?php if($detail_model_id){?>
+				data-detail_model_id="<?php echo $detail_model_id;?>"
+				<?php } ?>
 				data-name="attribute_list_item"
 
 			>

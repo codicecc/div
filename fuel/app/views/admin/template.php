@@ -24,6 +24,7 @@
 		'bootstrap.js',
 		'elementList.js',
 		'detailList.js',
+		'attributeItem.js',
 		'modal.js',
 		//'custom.js',
 	)); ?>

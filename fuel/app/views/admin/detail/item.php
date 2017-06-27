@@ -18,13 +18,12 @@ $input_id = 'detail_list_item_'.$detail->id;
 			data-name="detail_list_item"
 			<?php echo $checked ? 'checked' : ''; ?>
 			class="detail"
-			>
-							
+			>					
 		<label for="<?php echo $input_id; ?>">
 			<?php echo $detail->name; ?>
 			<a target="_blank" href="/admin/detail/view/<?php echo $detail->id;?>">
 				<i class="fa fa-external-link fa-fw"></i>
 			</a>
-			<?php echo render('admin/attribute/item', array('detail' => $detail, 'model' => $model)); ?>
 		</label>
+		<?php echo render('admin/attribute/item', array('detail' => $detail, 'model' => $model)); ?>
 	</li>
