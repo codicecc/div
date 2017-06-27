@@ -1,5 +1,5 @@
 <?php
-$input_id = 'detail_list_'.$detail->id;
+$input_id = 'detail_list_item_'.$detail->id;
 ?>
 	<li class="detail_list_item">
 		<?php
@@ -13,9 +13,13 @@ $input_id = 'detail_list_'.$detail->id;
 			autocomplete="off"
 			id="<?php echo $input_id; ?>"
 			data-detail_id="<?php echo $detail->id; ?>"
+			data-model_id="<?php echo $model->id;?>"
+			data-element_id="<?php echo $element->id;?>"
+			data-name="detail_list_item"
 			<?php echo $checked ? 'checked' : ''; ?>
 			class="detail"
 			>
+							
 		<label for="<?php echo $input_id; ?>">
 			<?php echo $detail->name; ?>
 			<a target="_blank" href="/admin/detail/view/<?php echo $detail->id;?>">

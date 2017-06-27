@@ -16,6 +16,11 @@ $detail_model_object=DB::select('*')->from("details_models")
 				class="attribute"
 				autocomplete="off"
 				placeholder="Attribute"
+				data-model_id=<?php echo $model->id;?>
+				data-detail_id=<?php echo $detail->id;?>
+				data-detail_model_id=<?php echo $detail_model_id;?>
+				data-name="attribute_list_item"
+
 			>
 <?php
 	}
