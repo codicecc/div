@@ -59,9 +59,9 @@ class Controller_Admin_Detail extends Controller_Admin{
 				));
 				
 				$checkUniquePair=uniquevaluerules::checkNameFk("details",
-					array("Name","element_id"),
-					array(Input::post('name'),Input::post('element_id')));
-					
+				array("id","Name","element_id"),
+				array(0,Input::post('name'),Input::post('element_id')));
+				
 				if($checkUniquePair){
 					Session::set_flash('error', e('Could not save same element.'));
 				}
@@ -99,8 +99,8 @@ class Controller_Admin_Detail extends Controller_Admin{
 			$detail->note = Input::post('note');
 
 			$checkUniquePair=uniquevaluerules::checkNameFk("details",
-				array("Name","element_id"),
-				array(Input::post('name'),Input::post('element_id')));
+				array("id","Name","element_id"),
+				array(intval($id),Input::post('name'),Input::post('element_id')));
 				
 			if($checkUniquePair){
 				Session::set_flash('error', e('Could not save same element.'));
