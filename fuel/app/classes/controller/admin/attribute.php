@@ -7,6 +7,9 @@ class Controller_Admin_Attribute extends Controller_Admin{
 	
 	public function action_save(){
 		if (Input::is_ajax()) {
+			if(intval(Input::post('model_id')==0)) return 11;
+			if(intval(Input::post('detail_id')==0)) return 12;
+			if(empty(trim(Input::post('name')))) return 13;
 			// Get Details_Models Id
 			$Detail_Model=Model_Detail_Model::find('all',
 					array('where' => array(

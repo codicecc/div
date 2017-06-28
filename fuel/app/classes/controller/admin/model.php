@@ -151,7 +151,7 @@ class Controller_Admin_Model extends Controller_Admin{
 			}
 			else{
 				if(hmodel::get_attribute($model->id,$detail->id))
-					$this->attributeDelete($model->id,$detail->id);
+				$this->attributeDelete($model->id,$detail->id);
 				unset($model->details[$detail->id]);
 				
 			}
