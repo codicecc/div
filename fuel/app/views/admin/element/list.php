@@ -2,6 +2,6 @@
 <?php 
 foreach (Model_Element::find('all') as $element) {
 ?>
-	<?php echo render('admin/element/item', array('element' => $element, 'model' => $model)); ?>
+	<?php echo render('admin/element/item', array('readonly' => $readonly, 'element' => $element, 'model' => $model)); ?>
 <?php } ?>
 </ul>

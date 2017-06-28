@@ -8,6 +8,9 @@
 				if($model->id==$element_model->id)$checked=true;
 			}
 		?>
+		<?php
+		//if(isset($readonly))die()
+		?>
 		<input
 			type="checkbox"
 			autocomplete="off"
@@ -17,13 +20,13 @@
 			data-name="element_list_item"
 			<?php echo $checked ? 'checked' : ''; ?>
 			class="element"
-			>			
+			>
 		<label for="<?php echo $input_id; ?>">
 			<?php echo $element->name; ?>
 			<a target="_blank" href="/admin/detail/index/<?php echo $element->id;?>">
 				<i class="fa fa-external-link fa-fw"></i>
 			</a>
 		</label>
-		<?php echo render('admin/detail/list', array('element' => $element,'model' => $model)); ?>
+		<?php echo render('admin/detail/list', array('readonly' => $readonly, 'element' => $element,'model' => $model)); ?>
 	</li>
 

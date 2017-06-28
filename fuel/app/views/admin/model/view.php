@@ -9,7 +9,7 @@
 
 <p>	
 	<strong><?php echo __('admin.ElementSelecting');?>:</strong>
-	<?php echo render('admin/element/list', array('model' => $model)); ?>
+	<?php echo render('admin/element/list', array('readonly' => $readonly, 'model' => $model)); ?>
 </p>
 	
 <p>
