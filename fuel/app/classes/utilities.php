@@ -16,10 +16,10 @@ class utilities{
   static function adminActions($item,$controllerName,$aActions){
   	$t="";
 		for($i=0;$i<count($aActions);$i++){
-			//if(Auth::has_access(Request::active()->route->segments[1].'.'.$aActions[$i][1])):
 			if(Auth::has_access(Request::active()->controller.'.'.$aActions[$i][1])):
 				$tstr=array("class" => "btn btn-primary");
 				if(($aActions[$i][1]=="delete"))$tstr=array("onclick" => "return confirm('Are you sure?')","class" => "btn btn-danger");
+				if(isset($aActions[$i][2]))$tstr=array("class" => "btn btn-".$aActions[$i][2]);
 				$t.=" ".Html::anchor('admin/'.$controllerName.'/'.$aActions[$i][1].'/'.$item->id, $aActions[$i][0],$tstr);
 			endif;
 		}
