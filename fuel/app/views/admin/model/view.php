@@ -1,6 +1,9 @@
 <h2><?php echo __('admin.Viewing');?> #<?php echo $model->id; ?></h2>
 
 <p>
+	<strong><?php echo __('admin.SKU');?>:</strong>
+	<?php echo $model->sku; ?></p>
+<p>
 	<strong><?php echo __('admin.Name');?>:</strong>
 	<?php echo $model->name; ?></p>
 

@@ -2,11 +2,12 @@
 
 	<fieldset>
 		<div class="form-group">
-			
+			<?php echo Form::label(__('admin.SKU'), 'sku', array('class'=>'control-label')); ?>
+			<?php echo Form::input('sku', Input::post('sku', isset($model) ? $model->sku : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>__('admin.SKU'))); ?>
+		</div>
+		<div class="form-group">
 			<?php echo Form::label(__('admin.Name'), 'name', array('class'=>'control-label')); ?>
-
-				<?php echo Form::input('name', Input::post('name', isset($model) ? $model->name : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>__('admin.Name'))); ?>
-
+			<?php echo Form::input('name', Input::post('name', isset($model) ? $model->name : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>__('admin.Name'))); ?>
 		</div>
 		<div class="form-group">
 			<?php echo Form::label(__('admin.DifficultIndex'), 'difficult_index', array('class'=>'control-label')); ?>

@@ -4,6 +4,7 @@
 <table class="table table-striped">
 	<thead>
 		<tr>
+			<th><?php echo __('admin.SKU');?></th>
 			<th><?php echo __('admin.Name');?></th>
 			<th><?php echo __('admin.DifficultIndex');?></th>
 			<th><?php echo __('admin.Note');?></th>
@@ -13,6 +14,7 @@
 	<tbody>
 <?php foreach ($models as $item): ?>		<tr>
 
+			<td><?php echo $item->sku; ?></td>
 			<td><?php echo $item->name; ?></td>
 			<td><?php echo $item->difficult_index; ?></td>
 			<td><?php echo $item->note; ?></td>

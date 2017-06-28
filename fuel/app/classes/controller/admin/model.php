@@ -31,6 +31,7 @@ class Controller_Admin_Model extends Controller_Admin{
 			if ($val->run())
 			{
 				$model = Model_Model::forge(array(
+					'sku' => Input::post('sku'),
 					'name' => Input::post('name'),
 					'difficult_index' => Input::post('difficult_index'),
 					'note' => Input::post('note'),
@@ -67,6 +68,7 @@ class Controller_Admin_Model extends Controller_Admin{
 	
 		if ($val->run()){
 		
+			$model->sku = Input::post('sku');
 			$model->name = Input::post('name');
 			$model->difficult_index = Input::post('difficult_index');
 			$model->note = Input::post('note');
@@ -85,6 +87,7 @@ class Controller_Admin_Model extends Controller_Admin{
 		}
 		else{
 			if (Input::method() == 'POST'){
+				$model->sku = $val->validated('sku');
 				$model->name = $val->validated('name');
 				$model->difficult_index = $val->validated('difficult_index');
 				$model->note = $val->validated('note');

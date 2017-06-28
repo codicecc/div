@@ -37,7 +37,8 @@ return array(
     
     'ElementSelecting' => 'Elementi',
     'DifficultIndex' => 'Indice Difficoltà',
-    'Model' => 'Modello',
+    'SKU' => 'SKU',
+    'Models' => 'Modelli',
     'Models' => 'Modelli',
     'ListingModels' => 'Lista Modelli',
     'ModelList' => 'Lista Modelli',
