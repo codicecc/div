@@ -44,7 +44,7 @@ class Controller_Admin_Model extends Controller_Admin{
 					'difficult_index' => Input::post('difficult_index'),
 					'note' => Input::post('note'),
 				));
-
+				
 				if ($model and $model->save())
 				{
 					Session::set_flash('success', e('Added model #'.$model->id.'.'));
@@ -76,6 +76,7 @@ class Controller_Admin_Model extends Controller_Admin{
 	
 		if ($val->run()){
 		
+			$model->id = Input::post('id');
 			$model->sku = Input::post('sku');
 			$model->name = Input::post('name');
 			$model->difficult_index = Input::post('difficult_index');
