@@ -19,22 +19,29 @@ class utilities{
 			if(Auth::has_access(Request::active()->controller.'.'.$aActions[$i][1])):
 				$array=array("class" => "btn btn-primary");
 				$parameter="";
+				$faicon="";
 				if(isset($aActions[$i][2])){
 					if(isset($aActions[$i][2]["class"])){
 						$array=array("class" => "btn btn-".$aActions[$i][2]["class"]);
 						if($aActions[$i][2]["class"]=="danger")$array=array("class" => "btn btn-".$aActions[$i][2]["class"],"onclick" => "return confirm('Are you sure?')");
 					}
 					if(isset($aActions[$i][2]["parameter"]))$parameter=$aActions[$i][2]["parameter"];
+					if(isset($aActions[$i][2]["faicon"]))$faicon=$aActions[$i][2]["faicon"];
 				};
-				/*
-				$class=
-				
-				["class"])
-				?"primary":$aActions[$i][2]["class"];
-				*/
-				//if(($aActions[$i][1]=="delete"))$array=array("onclick" => "return confirm('Are you sure?')","class" => "btn btn-danger");
-				//if(isset($aActions[$i][2]))$tstr=array("class" => "btn btn-".$aActions[$i][2]);
-				$t.=" ".Html::anchor('admin/'.$controllerName.'/'.$aActions[$i][1].'/'.$item->id.'/'.$parameter, $aActions[$i][0],
+				if(empty($faicon)){
+					switch ($aActions[$i][1]) {
+						case "view":
+							$faicon="sticky-note-o";
+							break;
+						case "edit":
+							$faicon="pencil";
+							break;
+						case "delete":
+							$faicon="trash-o";
+							break;
+					}
+				}
+				$t.=" ".Html::anchor('admin/'.$controllerName.'/'.$aActions[$i][1].'/'.$item->id.'/'.$parameter, "<i class=\"fa fa-".$faicon."\"></i> " . $aActions[$i][0],
 						$array
 					);
 			endif;

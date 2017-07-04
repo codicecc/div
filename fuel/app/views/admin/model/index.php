@@ -26,12 +26,19 @@
 						array(
 							array(__('admin.View'),'view',
 								array(
-									"parameter" => "1"
+									"parameter" => "1",
 									)							
 								),
 							array(__('admin.Elements'),'view',
 								array(
 									"class" => "info",
+									"faicon" => "tag"
+									)
+								),
+							array(__('admin.Clone'),'clone',
+								array(
+									"class" => "warning",
+									"faicon" => "clone"
 									)
 								),
 							array(__('admin.Edit'),'edit'),

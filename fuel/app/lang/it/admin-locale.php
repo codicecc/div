@@ -1,5 +1,6 @@
 <?php
 return array(
+	'Clone' => 'Duplica',
 	'Details' => 'Dettagli',
 	'Reset' => 'Reset',
 	'Filter' => 'Filtro',
