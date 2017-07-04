@@ -7,10 +7,54 @@ class Controller_Admin_Model extends Controller_Admin{
 	
 	public function action_index()
 	{
-		$data['models'] = Model_Model::find('all');
+		$data['models'] = Model_Model::find('all',
+							array(
+								'order_by' => array('id' => 'desc'),
+							)
+						);
 		$this->template->title = "Models";
 		$this->template->content = View::forge('admin/model/index', $data);
 
+	}
+
+	public function action_clone($id=null){
+				
+		$model = Model_Model::query()
+			->related('elements')
+			->related('details')
+			->where('id', '=', $id)
+			->order_by('id', 'desc')		
+			->get_one();
+			
+		$newModel = Model_Model::forge(array(
+					'sku' => "CLONE ".$model->sku,
+					'name' => $model->name,
+					'difficult_index' => $model->difficult_index,
+					'note' => $model->note,
+				));
+				
+		if ($newModel and $newModel->save()){
+			$this->relationshipClone($model,$newModel->id);
+			Session::set_flash('success', e('Added model #'.$model->id.'.'));
+			Response::redirect('admin/model');
+			//die();
+		}
+	}
+	private function relationshipClone($model,$newModelId){
+		$newModel = Model_Model::find($newModelId);
+		foreach($model->elements as $element){
+			$newElement = Model_Element::find($element->id);
+			$newModel->elements[]=$newElement;
+		}
+		foreach($model->details as $detail){
+			$newDetail = Model_Detail::find($detail->id);
+			$newModel->details[]=$newDetail;
+		}
+		$newModel->save();
+		
+		foreach($model->details as $detail){
+			hmodel::set_attribute($newModelId,$detail->id,hmodel::get_attribute($model->id,$detail->id,"name"));
+		}
 	}
 
 	public function action_view($id = null,$readonly=null){
@@ -76,7 +120,6 @@ class Controller_Admin_Model extends Controller_Admin{
 	
 		if ($val->run()){
 		
-			$model->id = Input::post('id');
 			$model->sku = Input::post('sku');
 			$model->name = Input::post('name');
 			$model->difficult_index = Input::post('difficult_index');

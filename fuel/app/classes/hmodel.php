@@ -25,5 +25,29 @@ class hmodel{
 		}
 		return $result;
 	}
+	static function set_attribute($model_id,$detail_id,$attribute_name){
+		// Get Details_Models Id
+		$Detail_Model=Model_Detail_Model::find('all',
+				array('where' => array(
+					array('model_id', '=', $model_id), 
+					array('detail_id', '=', $detail_id)
+				)
+			)
+		);
+		foreach($Detail_Model as $values){
+			$detail_model_id=$values->id;
+		}
+		
+		$Detail_Model=Model_Detail_Model::find($detail_model_id); 		
+		$attribute=DB::select('id')->from("attributes")->where('detail_model_id', '=', $Detail_Model->id)->execute();
+		if(count($attribute)>0){
+			$Detail_Model->attribute=Model_Attribute::find($attribute[0]["id"]);
+		}
+		else{
+			$Detail_Model->attribute=new Model_Attribute();
+		}
+		$Detail_Model->attribute->name=$attribute_name;
+		$Detail_Model->save();
+	}
 }
 ?>

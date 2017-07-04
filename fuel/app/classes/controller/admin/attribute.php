@@ -10,30 +10,12 @@ class Controller_Admin_Attribute extends Controller_Admin{
 			if(intval(Input::post('model_id')==0)) return 11;
 			if(intval(Input::post('detail_id')==0)) return 12;
 			if(empty(trim(Input::post('name')))) return 13;
-			// Get Details_Models Id
-			$Detail_Model=Model_Detail_Model::find('all',
-					array('where' => array(
-						array('model_id', '=', intval(Input::post('model_id'))), 
-						array('detail_id', '=', intval(Input::post('detail_id')))
-					)
-				)
-			);
-			foreach($Detail_Model as $values){
-				$detail_model_id=$values->id;
-			}
-		
+			
+			$model_id=intval(Input::post('model_id'));
+			$detail_id=intval(Input::post('detail_id'));
 			$attribute_name=Input::post('name');
 			
-			$Detail_Model=Model_Detail_Model::find($detail_model_id); 		
-			$attribute=DB::select('id')->from("attributes")->where('detail_model_id', '=', $Detail_Model->id)->execute();
-			if(count($attribute)>0){
-				$Detail_Model->attribute=Model_Attribute::find($attribute[0]["id"]);
-			}
-			else{
-				$Detail_Model->attribute=new Model_Attribute();
-			}
-			$Detail_Model->attribute->name=$attribute_name;
-			$Detail_Model->save();
+			hmodel::set_attribute($model_id,$detail_id,$attribute_name);
 		}
 		return false; // we return no content at all
 	}

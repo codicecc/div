@@ -1,7 +1,7 @@
 <?php
 // app/classes/hvalidation.php
-class Hvalidation
-{
+class Hvalidation{
+	
     public static function _validation_unique($val, $options){
 
 		$validation = \Validation::active();
