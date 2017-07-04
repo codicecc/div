@@ -8,9 +8,17 @@ $element_details=Model_detail::find('all', array (
 		);
 
 foreach ($element_details as $detail) {
+
+	if($readonly==1){
+	foreach($model->details as $d){
+			if($d->id==$detail->id)echo render('admin/detail/item', array('readonly' => $readonly,'detail' => $detail,'element' => $element, 'model' => $model));
+		}
+	}
+	else{
 ?>
-	<?php echo render('admin/detail/item', array('detail' => $detail,'element' => $element, 'model' => $model)); ?>
+	<?php echo render('admin/detail/item', array('readonly' => $readonly,'detail' => $detail,'element' => $element, 'model' => $model)); ?>
 <?php
+	}
 }
 ?>
 </ul>

@@ -21,6 +21,9 @@ foreach($Attribute_Model as $values){
 	$name=$values->name;
 }
 ?>
+		<?php
+		if($readonly==0){
+		?>
 			<input type="text"
 				class="attribute"
 				autocomplete="off"
@@ -30,3 +33,12 @@ foreach($Attribute_Model as $values){
 				data-name="attribute_list_item"
 				value="<?php echo $name;?>"
 			>
+		<?php
+		}
+		else{
+		?>
+		---
+		<?php echo $name;?>
+		<?php
+		}
+		?>

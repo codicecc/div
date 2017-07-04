@@ -8,6 +8,9 @@ $input_id = 'detail_list_item_'.$detail->id;
 				if($d->id==$detail->id)$checked=true;
 			}
 		?>
+		<?php
+		if($readonly==0){
+		?>		
 		<input
 			type="checkbox"
 			autocomplete="off"
@@ -19,11 +22,14 @@ $input_id = 'detail_list_item_'.$detail->id;
 			<?php echo $checked ? 'checked' : ''; ?>
 			class="detail"
 			>					
+		<?php
+		}
+		?>
 		<label for="<?php echo $input_id; ?>">
 			<?php echo $detail->name; ?>
 			<a target="_blank" href="/admin/detail/view/<?php echo $detail->id;?>">
 				<i class="fa fa-external-link fa-fw"></i>
 			</a>
 		</label>
-		<?php echo render('admin/attribute/item', array('detail' => $detail, 'model' => $model)); ?>
+		<?php echo render('admin/attribute/item', array('readonly' => $readonly,'detail' => $detail, 'model' => $model)); ?>
 	</li>

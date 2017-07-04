@@ -9,7 +9,7 @@
 			}
 		?>
 		<?php
-		//if(isset($readonly))die()
+		if($readonly==0){
 		?>
 		<input
 			type="checkbox"
@@ -21,6 +21,9 @@
 			<?php echo $checked ? 'checked' : ''; ?>
 			class="element"
 			>
+		<?php
+		}
+		?>
 		<label for="<?php echo $input_id; ?>">
 			<?php echo $element->name; ?>
 			<a target="_blank" href="/admin/detail/index/<?php echo $element->id;?>">

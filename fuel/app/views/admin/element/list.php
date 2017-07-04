@@ -2,6 +2,15 @@
 <?php 
 foreach (Model_Element::find('all') as $element) {
 ?>
-	<?php echo render('admin/element/item', array('readonly' => $readonly, 'element' => $element, 'model' => $model)); ?>
+	<?php 
+	if($readonly==1){
+		foreach($element->models as $element_model ) {
+			if($model->id==$element_model->id)echo render('admin/element/item', array('readonly' => $readonly, 'element' => $element, 'model' => $model)); 
+		}
+	}
+	else{
+		echo render('admin/element/item', array('readonly' => $readonly, 'element' => $element, 'model' => $model)); 
+	}
+	?>
 <?php } ?>
 </ul>

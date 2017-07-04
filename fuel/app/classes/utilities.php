@@ -17,10 +17,26 @@ class utilities{
   	$t="";
 		for($i=0;$i<count($aActions);$i++){
 			if(Auth::has_access(Request::active()->controller.'.'.$aActions[$i][1])):
-				$tstr=array("class" => "btn btn-primary");
-				if(($aActions[$i][1]=="delete"))$tstr=array("onclick" => "return confirm('Are you sure?')","class" => "btn btn-danger");
-				if(isset($aActions[$i][2]))$tstr=array("class" => "btn btn-".$aActions[$i][2]);
-				$t.=" ".Html::anchor('admin/'.$controllerName.'/'.$aActions[$i][1].'/'.$item->id, $aActions[$i][0],$tstr);
+				$array=array("class" => "btn btn-primary");
+				$parameter="";
+				if(isset($aActions[$i][2])){
+					if(isset($aActions[$i][2]["class"])){
+						$array=array("class" => "btn btn-".$aActions[$i][2]["class"]);
+						if($aActions[$i][2]["class"]=="danger")$array=array("class" => "btn btn-".$aActions[$i][2]["class"],"onclick" => "return confirm('Are you sure?')");
+					}
+					if(isset($aActions[$i][2]["parameter"]))$parameter=$aActions[$i][2]["parameter"];
+				};
+				/*
+				$class=
+				
+				["class"])
+				?"primary":$aActions[$i][2]["class"];
+				*/
+				//if(($aActions[$i][1]=="delete"))$array=array("onclick" => "return confirm('Are you sure?')","class" => "btn btn-danger");
+				//if(isset($aActions[$i][2]))$tstr=array("class" => "btn btn-".$aActions[$i][2]);
+				$t.=" ".Html::anchor('admin/'.$controllerName.'/'.$aActions[$i][1].'/'.$item->id.'/'.$parameter, $aActions[$i][0],
+						$array
+					);
 			endif;
 		}
 		return $t;
