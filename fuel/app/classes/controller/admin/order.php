@@ -5,11 +5,24 @@ class Controller_Admin_Order extends Controller_Admin
 	public function action_test(){
 		//Adding new Order
 		$order = Model_Order::forge(array(
-					'name' => "Ordine di Test",
+					'name' => "Ordine di Test ".time(),
 					'note' => "Note",
 				));
+		/*
 		if ($order and $order->save()){
 			echo "<i>#".$order->id." - ".$order->name." created!</i>";
+		}
+		*/
+		
+		$models_students = Model_Model_Student::forge(array(
+				'model_id' => 71,
+				'student_id' => 112,
+				'order_id' => 7,
+			));
+		
+		if ($models_students and $models_students->save()){
+			echo "<i>#".$models_students->id." - created!</i>";
+			echo "<br />";						
 		}
 		die();
 	}

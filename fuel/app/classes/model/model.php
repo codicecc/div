@@ -1,6 +1,15 @@
 <?php
 class Model_Model extends \Orm\Model{
 	
+	protected static $_has_many = array(
+		'orders' => array(
+			'model_to' => 'Model_Order',
+			'key_from' => 'id',
+			'key_to' => 'model_id',
+			'cascade_save' => true,			
+			'cascade_delete' => true,
+		),
+	);
 	protected static $_many_many = array(
 		'elements' => array(
 			'key_from' => 'id',

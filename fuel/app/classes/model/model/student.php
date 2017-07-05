@@ -7,8 +7,8 @@ class Model_Model_Student extends \Orm\Model{
 	
 	protected static $_properties = array(
 		'id',
-		'element_id',
 		'model_id',
+		'student_id',		
 		'order_id',
 		'created_at',
 		'updated_at',
