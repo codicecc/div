@@ -30,7 +30,23 @@
 			<td><?php echo Hsize::getSize($item->student->id,$item->body_part->id,$item->value);?></td>			
 			<td>
 				<?php
-					echo Utilities::adminActions($item,Request::active()->route->segments[1],array(array(__('admin.View'),'view'),array(__('admin.Edit'),'edit'),array(__('admin.Delete'),'delete'),));
+					echo Utilities::adminActions(
+						$item,
+						Request::active()->route->segments[1],
+						array(
+							array(__('admin.View'),'view',
+								array(
+									"parameter" => "1",
+									)							
+								),
+							array(__('admin.Edit'),'edit'),
+							array(__('admin.Delete'),'delete',
+								array(
+									"class" => "danger",
+								),
+							),
+						)
+					);
 				?>
 			</td>
 		</tr>

@@ -16,7 +16,23 @@
 			<td><?php echo $item->note; ?></td>
 			<td>
 				<?php
-					echo Utilities::adminActions($item,Request::active()->route->segments[1],array(array(__('admin.View'),'view'),array(__('admin.Edit'),'edit'),array(__('admin.Delete'),'delete'),));
+					echo Utilities::adminActions(
+						$item,
+						Request::active()->route->segments[1],
+						array(
+							array(__('admin.View'),'view',
+								array(
+									"parameter" => "1",
+									)							
+								),
+							array(__('admin.Edit'),'edit'),
+							array(__('admin.Delete'),'delete',
+								array(
+									"class" => "danger",
+								),
+							),
+						)
+					);
 				?>
 			</td>
 		</tr>

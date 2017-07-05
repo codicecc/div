@@ -15,8 +15,20 @@
 			<td><?php echo $item->name; ?></td>
 			<td>
 				<?php
-					echo Utilities::adminActions($item,Request::active()->route->segments[1]."/".Request::active()->route->segments[2],array(array(__('admin.Edit'),'edit'),array(__('admin.Delete'),'delete'),));
+					echo Utilities::adminActions(
+						$item,
+						Request::active()->route->segments[2],
+						array(
+							array(__('admin.Edit'),'edit'),
+							array(__('admin.Delete'),'delete',
+								array(
+									"class" => "danger",
+								),
+							),
+						)
+					);
 				?>
+
 			</td>
 		</tr>
 <?php endforeach; ?>	</tbody>

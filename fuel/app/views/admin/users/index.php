@@ -29,8 +29,25 @@
 			<td><?php echo date("Y-m-d H:i:s",$item->last_login); ?></td>
 			<td><?php echo date("Y-m-d H:i:s",$item->created_at); ?></td>
 			<td>
-				<?php //echo Utilities::adminActions($item,Request::active()->route->segments[1],array(array('View','view'),array('Edit','edit'),array('Delete','delete'),));
-					echo Utilities::adminActions($item,Request::active()->route->segments[1],array(array(__('admin.View'),'view'),array(__('admin.Edit'),'edit'),array(__('admin.Delete'),'delete'),array(__('admin.ChangePassword'),'changepassword'),));
+				<?php
+					echo Utilities::adminActions(
+						$item,
+						Request::active()->route->segments[1],
+						array(
+							array(__('admin.View'),'view',
+								array(
+									"parameter" => "1",
+									)							
+								),
+							array(__('admin.Edit'),'edit'),
+							array(__('admin.Delete'),'delete',
+								array(
+									"class" => "danger",
+								),
+							),
+							array(__('admin.ChangePassword'),'changepassword'),
+						)
+					);
 				?>
 			</td>
 		</tr>

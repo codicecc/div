@@ -54,6 +54,8 @@ class Controller_Admin_Order extends Controller_Admin
 			{
 				$order = Model_Order::forge(array(
 					'name' => Input::post('name'),
+					'model_id' => Input::post('model_id'),
+					'school_id' => Input::post('school_id'),										
 					'note' => Input::post('note'),
 				));
 
@@ -88,6 +90,8 @@ class Controller_Admin_Order extends Controller_Admin
 		if ($val->run())
 		{
 			$order->name = Input::post('name');
+			$order->model_id = Input::post('model_id');
+			$order->school_id = Input::post('school_id');
 			$order->note = Input::post('note');
 
 			if ($order->save())

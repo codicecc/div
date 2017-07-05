@@ -35,6 +35,15 @@ return array(
     'StudentList' => 'Lista Studenti',
     'EditingStudent' => 'Modifica Studente',
     'NewStudent' => 'Nuovo Studente',
+    'NoStudents' => 'Nulla qui',
+    
+    'Order' => 'Ordine',
+    'Orders' => 'Ordini',
+    'ListingOrders' => 'Lista Ordini',
+    'OrderList' => 'Lista Ordini',
+    'EditingOrder' => 'Modifica Ordine',
+    'NewOrder' => 'Nuovo Ordine',
+    'NoOrders' => 'Nulla qui',
     
     'ElementSelecting' => 'Elementi',
     'DifficultIndex' => 'Indice Difficoltà',

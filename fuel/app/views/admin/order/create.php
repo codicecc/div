@@ -1,7 +1,6 @@
-<h2>New Order</h2>
+<h2><?php echo __('admin.NewOrder');?></h2>
 <br>
 
 <?php echo render('admin/order/_form'); ?>
 
-
-<p><?php echo Html::anchor('admin/order', 'Back'); ?></p>
+<?php echo render('admin/order/_actions'); ?>	
