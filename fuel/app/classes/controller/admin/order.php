@@ -35,13 +35,51 @@ class Controller_Admin_Order extends Controller_Admin
 
 	}
 
-	public function action_view($id = null)
-	{
+	public function action_students($id = null){
+		if(!isset($id)){
+			Session::set_flash('error', e('Request is not valid!'));
+			Response::redirect('admin/order');
+		}
+
 		$data['order'] = Model_Order::find($id);
 
+		$data['students'] = DB::select('id','name')
+								->from('students')
+								->where('school_id',$data['order']->school_id)
+								 ->execute()
+								 ->as_array('id','name')
+								;
+										
+		$data['selected'] = DB::select('student_id')
+								->from('models_students')
+								->where('models_students.order_id',$data['order']->id)
+								->where('models_students.model_id',$data['order']->model_id)
+								->execute()
+								->as_array('student_id')
+								;
+		$aselected=array();
+		foreach($data['selected'] as $selected){
+			array_push($aselected,$selected["student_id"]);
+		}
+		$data['selected']=$aselected;
+								 
+		$data['student_selector']=1;
 		$this->template->title = "Order";
 		$this->template->content = View::forge('admin/order/view', $data);
 
+	}
+
+	public function action_view($id = null){
+		if(!isset($id)){
+			Session::set_flash('error', e('Request is not valid!'));
+			Response::redirect('admin/order');
+		}
+
+		$data['order'] = Model_Order::find($id);
+
+		$data['students']=0;
+		$this->template->title = "Order";
+		$this->template->content = View::forge('admin/order/view', $data);
 	}
 
 	public function action_create()

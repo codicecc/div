@@ -36,6 +36,7 @@ return array(
     'EditingStudent' => 'Modifica Studente',
     'NewStudent' => 'Nuovo Studente',
     'NoStudents' => 'Nulla qui',
+    'StudentSelecting' => 'Studenti',
     
     'Order' => 'Ordine',
     'Orders' => 'Ordini',

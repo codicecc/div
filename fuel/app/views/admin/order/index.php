@@ -25,8 +25,11 @@
 						Request::active()->route->segments[1],
 						array(
 							array(__('admin.View'),'view',
+								array()							
+								),
+							array(__('admin.Students'),'students',
 								array(
-									"parameter" => "1",
+									"class" => "info",
 									)							
 								),
 							array(__('admin.Edit'),'edit'),

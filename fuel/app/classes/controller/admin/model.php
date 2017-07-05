@@ -57,7 +57,24 @@ class Controller_Admin_Model extends Controller_Admin{
 		}
 	}
 
-	public function action_view($id = null,$readonly=null){
+	public function action_view($id = null,$readonly=1){
+		
+		if(!isset($id)){
+			Session::set_flash('error', e('Request is not valid!'));
+			Response::redirect('admin/model');
+		}
+
+		$data['model'] = Model_Model::find($id);
+
+		$this->template->title = "Model";
+		
+		$data['readonly']=1;
+		//if(isset($readonly))$data['readonly']=1;
+		$this->template->content = View::forge('admin/model/view', $data);
+
+	}
+
+	public function action_elements($id = null,$readonly=0){
 		
 		if(!isset($id)){
 			Session::set_flash('error', e('Request is not valid!'));
@@ -69,10 +86,10 @@ class Controller_Admin_Model extends Controller_Admin{
 		$this->template->title = "Model";
 		
 		$data['readonly']=0;
-		if(isset($readonly))$data['readonly']=1;
+		//if(isset($readonly))$data['readonly']=1;
 		$this->template->content = View::forge('admin/model/view', $data);
 
-	}
+	}	
 
 	public function action_create()
 	{

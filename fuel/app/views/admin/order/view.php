@@ -5,10 +5,25 @@
 	<?php echo $order->name; ?></p>
 <p>
 	<strong><?php echo __('admin.Model');?>:</strong>
-	<?php echo $order->model->name; ?></p>
+	<?php echo $order->model->sku; ?></p>
 <p>
 	<strong><?php echo __('admin.School');?>:</strong>
 	<?php echo $order->school->name; ?></p>
+<?php
+if(isset($student_selector)){
+?>
+<p>	
+	<strong><?php echo __('admin.StudentSelecting');?>:</strong>
+	<?php echo render('admin/student/list', array(
+							'selected'=>$selected,
+							'students'=>$students,
+							'student_selector' => $student_selector,
+							'order' => $order)
+							); ?>
+</p>
+<?php
+}
+?>
 <p>
 	<strong><?php echo __('admin.Note');?>:</strong>
 	<?php echo $order->note; ?></p>

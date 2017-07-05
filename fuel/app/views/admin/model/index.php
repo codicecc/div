@@ -26,10 +26,10 @@
 						array(
 							array(__('admin.View'),'view',
 								array(
-									"parameter" => "1",
+									//"parameter" => "1",
 									)							
 								),
-							array(__('admin.Elements'),'view',
+							array(__('admin.Elements'),'elements',
 								array(
 									"class" => "info",
 									"faicon" => "tag"
