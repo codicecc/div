@@ -25,6 +25,7 @@
 		'elementList.js',
 		'detailList.js',
 		'attributeItem.js',
+		'orderStudentList.js',
 		'modal.js',
 		//'custom.js',
 	)); ?>

@@ -1,31 +1,38 @@
 <h2><?php echo __('admin.Viewing');?> #<?php echo $order->id; ?></h2>
 
-<p>
+<div class="form-group">
 	<strong><?php echo __('admin.Name');?>:</strong>
-	<?php echo $order->name; ?></p>
-<p>
+	<?php echo $order->name; ?></div>
+
+<div class=" form-group">
 	<strong><?php echo __('admin.Model');?>:</strong>
-	<?php echo $order->model->sku; ?></p>
-<p>
+	<?php echo $order->model->sku; ?></div>
+
+<div class=" form-group">
 	<strong><?php echo __('admin.School');?>:</strong>
-	<?php echo $order->school->name; ?></p>
+	<?php echo $order->school->name; ?></div>
+<div class="form-group">
+	<label for="students"><?php echo __('admin.StudentSelecting');?>:</label>
 <?php
-if(isset($student_selector)){
-?>
-<p>	
-	<strong><?php echo __('admin.StudentSelecting');?>:</strong>
-	<?php echo render('admin/student/list', array(
-							'selected'=>$selected,
-							'students'=>$students,
-							'student_selector' => $student_selector,
-							'order' => $order)
-							); ?>
-</p>
-<?php
+if($student_selector>0){
+	echo render('admin/student/selectlist', array(
+					'selected'=>$selected,
+					'students'=>$students,
+					'student_selector' => $student_selector,
+					'order' => $order)
+					);
+}
+else{
+	echo render('admin/student/list', array(
+					'selected'=>$selected,
+					'student_selector' => $student_selector,
+					'order' => $order)
+					);	
 }
 ?>
-<p>
+</div>
+<div class=" form-group">
 	<strong><?php echo __('admin.Note');?>:</strong>
-	<?php echo $order->note; ?></p>
+	<?php echo $order->note; ?></div>
 
 <?php echo render('admin/order/_actions'); ?>	

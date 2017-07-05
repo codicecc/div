@@ -61,8 +61,8 @@ class Controller_Admin_Order extends Controller_Admin
 		foreach($data['selected'] as $selected){
 			array_push($aselected,$selected["student_id"]);
 		}
-		$data['selected']=$aselected;
-								 
+		
+		$data['selected']=$aselected;						 
 		$data['student_selector']=1;
 		$this->template->title = "Order";
 		$this->template->content = View::forge('admin/order/view', $data);
@@ -76,7 +76,14 @@ class Controller_Admin_Order extends Controller_Admin
 		}
 
 		$data['order'] = Model_Order::find($id);
-
+		$data['selected'] = DB::select('student_id')
+								->from('models_students')
+								->where('models_students.order_id',$data['order']->id)
+								->where('models_students.model_id',$data['order']->model_id)
+								->execute()
+								->as_array('student_id')
+								;
+		$data['student_selector']=0;
 		$data['students']=0;
 		$this->template->title = "Order";
 		$this->template->content = View::forge('admin/order/view', $data);

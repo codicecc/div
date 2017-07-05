@@ -16,7 +16,7 @@
 			echo $select_box;
 			?>
 			</div>
-
+			
 		</div>
 		<div class="form-group">
 			<?php echo Form::label(__('admin.School'), 'school_id', array('class'=>'control-label')); ?>
