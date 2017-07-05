@@ -19,6 +19,7 @@ return array(
         10 => '011_create_details_models',
         11 => '012_create_attributes',
         12 => '013_create_orders',
+        13 => '014_create_models_students',
       ),
     ),
     'module' => 

@@ -393,13 +393,10 @@ return array(
 								'text'   => 'Order',
 								'rights' => 'Controller_Admin_Orders.index'
 						 ),
-						 '/admin/dress' => array(
-								'text'   => 'Dress',
-								'rights' => 'Controller_Admin_Dress.index'
-						 )
 					)
 			 ),
-			'reports' => array(
+/*
+ * 			'reports' => array(
 					'text'   => 'Reports',
 					'rights' => 'Controller_Admin_Report.menu',
 					'sub' => array(
@@ -409,6 +406,7 @@ return array(
 						 )
 					)
 			 ),
+*/
 			 '/admin/users' => array(
 					'text'   => 'Users',
 					'rights' => 'Controller_Admin_Users.menu'

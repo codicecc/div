@@ -16,7 +16,7 @@ class Create_models_students
 		), array('id'));
 		
 		//Adding UNIQUE constraint to 'element_id' column and 'model_id' column 
-		\DB::query("ALTER TABLE `models_students` ADD UNIQUE( `model_id`, `students_id`, `order_id`)")->execute();
+		\DB::query("ALTER TABLE `models_students` ADD UNIQUE( `model_id`, `student_id`, `order_id`)")->execute();
 	}
 
 	public function down()
