@@ -3,13 +3,12 @@
 class Hvalidation{
 	
     public static function _validation_unique($val, $options){
-
 		$validation = \Validation::active();
 
         list($table, $field) = explode('.', $options);
         $result = DB::select(DB::expr("LOWER (\"$field\")"))
         ->where($field, '=', Str::lower($val))
-        ->where($table.".id", '<>',  $validation->input('id'))
+        ->where($table.".id", '<>',  intval($validation->input('id')))
         ->from($table)->execute();
 
         return ! ($result->count() > 0);

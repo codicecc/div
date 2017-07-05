@@ -29,11 +29,13 @@ class Model_Order extends \Orm\Model{
 		),
 	);
 
-	public static function validate($factory)
-	{
+	public static function validate($factory){
+		
 		$val = Validation::forge($factory);
-		$val->add_field('name', 'Name', 'required|max_length[255]');
-		$val->add_field('note', 'Note', 'required');
+		
+		$val->add_callable('Hvalidation');
+		$val->add_field('name', 'Name', 'required|max_length[255]', array('trim', 'strip_tags', 'required', 'is_upper'))
+			->add_rule('unique', 'orders.name');
 
 		return $val;
 	}

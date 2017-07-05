@@ -2,6 +2,18 @@
 class Controller_Admin_Order extends Controller_Admin
 {
 
+	public function action_test(){
+		//Adding new Order
+		$order = Model_Order::forge(array(
+					'name' => "Ordine di Test",
+					'note' => "Note",
+				));
+		if ($order and $order->save()){
+			echo "<i>#".$order->id." - ".$order->name." created!</i>";
+		}
+		die();
+	}
+	
 	public function action_index()
 	{
 		$data['orders'] = Model_Order::find('all');
