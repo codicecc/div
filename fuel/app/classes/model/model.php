@@ -22,6 +22,16 @@ class Model_Model extends \Orm\Model{
 			'cascade_save' => true,
 			'cascade_delete' => false,
 		),
+		'students' => array(
+			'key_from' => 'id',
+			'key_through_from' => 'model_id',
+			'model_to' => 'Model_Student',
+			'key_to' => 'id',
+			'key_through_to' => 'student_id',
+			'table_through' => 'models_students',
+			'cascade_save' => true,
+			'cascade_delete' => false,
+		),
     );
         
 	protected static $_properties = array(

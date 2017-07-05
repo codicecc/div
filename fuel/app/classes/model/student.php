@@ -2,13 +2,26 @@
 class Model_Student extends \Orm\Model{
 	
 	protected static $_belongs_to = array('school');
-	protected static $_has_many = array('measures' => array(
+	protected static $_has_many = array(
+		'measures' => array(
 			'model_to' => 'Model_Measure',
 			'key_from' => 'id',
 			'key_to' => 'student_id',
 			'cascade_save' => true,			
 			'cascade_delete' => true,		
 		)
+	);
+	protected static $_many_many = array(
+		'models' => array(
+			'key_from' => 'id',
+			'key_through_from' => 'student_id',
+			'model_to' => 'Model_Student',
+			'key_to' => 'id',
+			'key_through_to' => 'model_id',
+			'table_through' => 'models_student',
+			'cascade_save' => true,
+			'cascade_delete' => false,
+		),
 	);
 	
 	protected static $_properties = array(
