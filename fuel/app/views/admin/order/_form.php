@@ -39,5 +39,10 @@
 			<label class='control-label'>&nbsp;</label>
 			<?php echo Form::submit('submit', __('admin.Save'), array('class' => 'btn btn-primary')); ?>
 		</div>
+		
+		<div class="form-group">
+				<?php echo Form::hidden('id', isset($order) ? $order->id : 0);?>
+		</div>				
+	
 	</fieldset>
 <?php echo Form::close(); ?>
