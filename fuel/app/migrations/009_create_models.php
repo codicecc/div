@@ -15,6 +15,9 @@ class Create_models
 			'created_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
 			'updated_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
 		), array('id'));
+				
+		//Adding UNIQUE constraint to 'sku' column 
+		\DB::query("ALTER TABLE `models` ADD UNIQUE( `sku`)")->execute();
 	}
 
 	public function down()
