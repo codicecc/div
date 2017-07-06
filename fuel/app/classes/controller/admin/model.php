@@ -168,8 +168,13 @@ class Controller_Admin_Model extends Controller_Admin{
 		$this->template->content = View::forge('admin/model/edit');
 	}
 
-	public function action_delete($id = null)
-	{
+	public function action_delete($id = null){
+		
+		if(horder::orderExsistingByModel($id)){
+			Session::set_flash('error', e('Could not delete Model #'.$id.' there are Orders!'));
+			Response::redirect('admin/model');
+		}
+		
 		if ($model = Model_Model::find($id))
 		{
 			$model->delete();

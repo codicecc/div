@@ -2,4 +2,4 @@
 <br>
 
 <?php echo render('admin/school/_form'); ?>
-<?php echo render('admin/student/_actions'); ?>	
+<?php echo render('admin/school/_actions'); ?>	

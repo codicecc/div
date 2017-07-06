@@ -117,8 +117,13 @@ class Controller_Admin_Student extends Controller_Admin
 
 	}
 
-	public function action_delete($id = null)
-	{
+	public function action_delete($id = null){
+		
+		if(horder::orderExsistingByStudent($id)){
+			Session::set_flash('error', e('Could not delete Student #'.$id.' there are Orders!'));
+			Response::redirect('admin/student');
+		}
+		
 		if ($student = Model_Student::find($id))
 		{
 			$student->delete();

@@ -2,6 +2,14 @@
 class Controller_Admin_School extends Controller_Admin
 {
 
+	public function action_test(){
+		/*
+		debug::dump(horder::orderExsistingByModel(1));
+		debug::dump(horder::orderExsistingByStudent(117));
+		debug::dump(horder::orderExsistingBySchool(10));
+		*/
+		die();
+	}
 	public function action_index()
 	{
 		$data['schools'] = Model_School::find('all');
@@ -96,8 +104,13 @@ class Controller_Admin_School extends Controller_Admin
 
 	}
 
-	public function action_delete($id = null)
-	{
+	public function action_delete($id = null){
+		
+		if(horder::orderExsistingBySchool($id)){
+			Session::set_flash('error', e('Could not delete school #'.$id.' there are Orders!'));
+			Response::redirect('admin/school');
+		}
+		
 		if ($school = Model_School::find($id))
 		{
 			$school->delete();

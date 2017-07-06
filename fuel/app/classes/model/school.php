@@ -14,7 +14,7 @@ class Model_School extends \Orm\Model{
 			'key_from' => 'id',
 			'key_to' => 'school_id',
 			'cascade_save' => true,	
-			'cascade_delete' => true,
+			'cascade_delete' => false,
 		),	
 	);
 	
