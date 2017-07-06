@@ -12,6 +12,7 @@ class Create_orders
 			'model_id' => array('constraint' => 11, 'type' => 'int'),
 			'school_id' => array('constraint' => 11, 'type' => 'int'),
 			'note' => array('type' => 'text'),
+			'closed' => array('type' => 'boolean'),			
 			'created_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
 			'updated_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
 

@@ -17,6 +17,7 @@ class Model_Order extends \Orm\Model{
 		'model_id',
 		'school_id',
 		'note',
+		'closed',
 		'created_at',
 		'updated_at',
 	);

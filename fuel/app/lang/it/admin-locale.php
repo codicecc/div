@@ -105,7 +105,10 @@ return array(
 	'Detail' => 'Dettaglio',
 	'Dress' => 'Scheda Vestito',
     'Reports' => 'Stampe',
-    'Report' => 'Stampa',
+    'Closed' => 'Chiuso',
+    'yes' => 'si',
+    'no' => 'no',
+    
     
 	'dashboard' => 'Scrivania',
     'welcome' => 'Benvenuto',

@@ -8,6 +8,7 @@
 			<th><?php echo __('admin.Model');?></th>
 			<th><?php echo __('admin.School');?></th>
 			<th><?php echo __('admin.Note');?></th>
+			<th><?php echo __('admin.Closed');?></th>
 			<th></th>
 		</tr>
 	</thead>
@@ -18,6 +19,7 @@
 			<td><?php echo $item->model->name; ?></td>
 			<td><?php echo $item->school->name; ?></td>
 			<td><?php echo $item->note; ?></td>
+			<td><?php echo $item->closed?__("admin.yes"):__("admin.no"); ?></td>
 			<td>
 				<?php
 					echo Utilities::adminActions(

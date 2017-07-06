@@ -35,4 +35,8 @@ else{
 	<strong><?php echo __('admin.Note');?>:</strong>
 	<?php echo $order->note; ?></div>
 
+<div class=" form-group">
+	<strong><?php echo __('admin.Closed');?>:</strong>
+	<?php echo $order->closed?__("admin.yes"):__("admin.no"); ?></div>
+	
 <?php echo render('admin/order/_actions'); ?>	

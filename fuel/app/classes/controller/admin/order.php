@@ -102,6 +102,7 @@ class Controller_Admin_Order extends Controller_Admin
 					'model_id' => Input::post('model_id'),
 					'school_id' => Input::post('school_id'),										
 					'note' => Input::post('note'),
+					'closed' => Input::post('closed'),										
 				));
 
 				if ($order and $order->save())
@@ -138,6 +139,7 @@ class Controller_Admin_Order extends Controller_Admin
 			$order->model_id = Input::post('model_id');
 			$order->school_id = Input::post('school_id');
 			$order->note = Input::post('note');
+			$order->closed = Input::post('closed');
 
 			if ($order->save())
 			{

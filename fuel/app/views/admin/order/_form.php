@@ -35,6 +35,13 @@
 				<?php echo Form::textarea('note', Input::post('note', isset($order) ? $order->note : ''), array('class' => 'col-md-8 form-control', 'rows' => 8, 'placeholder'=>'Note')); ?>
 
 		</div>
+		
+		<div class="form-group">
+			<?php echo Form::label(__('admin.Closed'), 'closed', array('class'=>'control-label')); ?>
+
+				<?php echo Form::checkbox('closed', 1, Input::post('closed', isset($order) ? $order->closed : false), array('class' => 'col-md-1 form-control', )); ?>
+
+		</div>
 		<div class="form-group">
 			<label class='control-label'>&nbsp;</label>
 			<?php echo Form::submit('submit', __('admin.Save'), array('class' => 'btn btn-primary')); ?>
