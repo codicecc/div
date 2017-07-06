@@ -16,7 +16,7 @@
 <?php foreach ($orders as $item): ?>		<tr>
 			
 			<td><?php echo $item->name; ?></td>
-			<td><?php echo $item->model->name; ?></td>
+			<td><?php echo $item->model->sku." <i>(".$item->model->name.")</i>"; ?></td>
 			<td><?php echo $item->school->name; ?></td>
 			<td><?php echo $item->note; ?></td>
 			<td><?php echo $item->closed?__("admin.yes"):__("admin.no"); ?></td>

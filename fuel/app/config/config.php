@@ -395,18 +395,16 @@ return array(
 						 ),
 					)
 			 ),
-/*
- * 			'reports' => array(
+  			'reports' => array(
 					'text'   => 'Reports',
 					'rights' => 'Controller_Admin_Report.menu',
 					'sub' => array(
 						 '/admin/report' => array(
-								'text'   => 'Report',
+								'text'   => 'Reports',
 								'rights' => 'Controller_Admin_Orders.index'
 						 )
 					)
 			 ),
-*/
 			 '/admin/users' => array(
 					'text'   => 'Users',
 					'rights' => 'Controller_Admin_Users.menu'

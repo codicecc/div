@@ -20,8 +20,10 @@ class Helper {
 		 }
 		 return $menu . "</ul>";
 	}
-	static function count($table){
-		return count(DB::select('*')->from($table)->execute());
+	static function count($table,$where=null){
+		$query=DB::select('*')->from($table);
+		if(isset($where))$query->where($where);
+		return count($query->execute());
 	}
 }
 ?>

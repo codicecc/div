@@ -3,6 +3,7 @@ class Controller_Admin_Order extends Controller_Admin
 {
 
 	public function action_test(){
+		die();
 		//Adding new Order
 		$order = Model_Order::forge(array(
 					'name' => "Ordine di Test ".time(),
@@ -27,9 +28,18 @@ class Controller_Admin_Order extends Controller_Admin
 		die();
 	}
 	
-	public function action_index()
-	{
-		$data['orders'] = Model_Order::find('all');
+	public function action_index(){
+		
+		$query=Model_Order::query();
+		if(Input::get()){
+			foreach(Input::get() as $l => $v){
+				if($l=="closed"){
+					$query->where('closed',$v);
+				}
+			}
+		}
+		$data['orders']=$query->get();				
+		//$data['orders'] = Model_Order::find('all');
 		$this->template->title = "Orders";
 		$this->template->content = View::forge('admin/order/index', $data);
 
@@ -102,7 +112,7 @@ class Controller_Admin_Order extends Controller_Admin
 					'model_id' => Input::post('model_id'),
 					'school_id' => Input::post('school_id'),										
 					'note' => Input::post('note'),
-					'closed' => Input::post('closed'),										
+					'closed' => intval(Input::post('closed')),
 				));
 
 				if ($order and $order->save())
@@ -139,7 +149,7 @@ class Controller_Admin_Order extends Controller_Admin
 			$order->model_id = Input::post('model_id');
 			$order->school_id = Input::post('school_id');
 			$order->note = Input::post('note');
-			$order->closed = Input::post('closed');
+			$order->closed = intval(Input::post('closed'));
 
 			if ($order->save())
 			{

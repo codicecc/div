@@ -39,7 +39,7 @@
 		<div class="form-group">
 			<?php echo Form::label(__('admin.Closed'), 'closed', array('class'=>'control-label')); ?>
 
-				<?php echo Form::checkbox('closed', 1, Input::post('closed', isset($order) ? $order->closed : false), array('class' => 'col-md-1 form-control', )); ?>
+				<?php echo Form::checkbox('closed', 1, Input::post('closed', isset($order) ? $order->closed : 0), array('class' => 'col-md-1 form-control', )); ?>
 
 		</div>
 		<div class="form-group">
