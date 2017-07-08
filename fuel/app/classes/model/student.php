@@ -18,7 +18,7 @@ class Model_Student extends \Orm\Model{
 			'model_to' => 'Model_Student',
 			'key_to' => 'id',
 			'key_through_to' => 'model_id',
-			'table_through' => 'models_student',
+			'table_through' => 'models_students',
 			'cascade_save' => true,
 			'cascade_delete' => false,
 		),
