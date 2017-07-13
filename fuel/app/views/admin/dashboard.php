@@ -194,12 +194,18 @@
 					</a>
 					<a href="/admin/order/?closed=0" class="list-group-item">
 						<i class="fa fa-shopping-cart fa-fw"></i> Ordini Aperti
-						<span class="pull-right text-muted small"><em><?php echo Helper::count("orders",array('closed'=>'0'))?></em>
+						<span class="pull-right text-muted small"><?php echo 
+							'<i class="fa  '.Config::get('custom.icons.open.icon').'
+								'.Config::get('custom.icons.open.text-color').'"></i>'; ?>
+							<em><?php echo Helper::count("orders",array('closed'=>'0'))?></em>
 						</span>
 					</a>
 					<a href="/admin/order/?closed=1" class="list-group-item">
 						<i class="fa fa-shopping-cart fa-fw"></i> Ordini Chiusi
-						<span class="pull-right text-muted small"><em><?php echo Helper::count("orders",array('closed'=>'1'))?></em>
+						<span class="pull-right text-muted small"><?php echo 
+							'<i class="fa  '.Config::get('custom.icons.close.icon').'
+								'.Config::get('custom.icons.close.text-color').'"></i>'; ?>
+								<em><?php echo Helper::count("orders",array('closed'=>'1'))?></em>
 						</span>
 					</a>
 <!--
