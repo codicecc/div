@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('[data-id="order-model-toggle"]').on("click",function() {
+	$('[data-id="order-model-toggle"],[data-id="order-model-toggle-container"]').on("click",function() {
 		var $obj=$('[data-id="order-model"]');
 		var $icon=$('[data-id="order-model-toggle"]');
 		if($obj.is(":visible")){
