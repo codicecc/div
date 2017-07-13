@@ -35,6 +35,7 @@
 	</script>
 	<?php
 		Config::load('custom', true);
+		Config::load('navigation', true);
 	?>	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
@@ -54,7 +55,7 @@
 			<div class="navbar-collapse collapse">
 			<?php			
 
-			echo Helper::build_menu(Config::get('navigation_bar'));
+			echo Helper::build_menu(Config::get('navigation.navigation_bar'));
 ?>
 			<ul class="nav navbar-nav pull-right">
 					<li class="dropdown">

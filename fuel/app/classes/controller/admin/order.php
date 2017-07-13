@@ -72,7 +72,7 @@ class Controller_Admin_Order extends Controller_Admin
 			array_push($aselected,$selected["student_id"]);
 		}
 		
-		$data['selected']=$aselected;						 
+		$data['selected']=$aselected;
 		$data['student_selector']=1;
 		$this->template->title = "Order";
 		$this->template->content = View::forge('admin/order/view', $data);
@@ -93,6 +93,8 @@ class Controller_Admin_Order extends Controller_Admin
 								->execute()
 								->as_array('student_id')
 								;
+		
+		$data['selected_number']=count($data['selected']);
 		$data['student_selector']=0;
 		$data['students']=0;
 		$this->template->title = "Order";

@@ -45,6 +45,7 @@ return array(
     'EditingOrder' => 'Modifica Ordine',
     'NewOrder' => 'Nuovo Ordine',
     'NoOrders' => 'Nulla qui',
+    'selectedStudentNumber' => 'Totale studenti',
     
     'ElementSelecting' => 'Elementi',
     'DifficultIndex' => 'Indice Difficoltà',

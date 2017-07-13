@@ -5,7 +5,7 @@
 	<?php echo $model->sku; ?>
 	<strong><?php echo __('admin.Name');?>:</strong>
 	<?php echo $model->name; ?>
-	<i data-id="order-model-toggle" class="order-model-toggle fa fa-ellipsis-v fa-fw"></i>
+	<i data-id="order-model-toggle" class="order-model-toggle fa fa-chevron-down text-info fa-fw"></i>
 	</div>
 	<div data-id="order-model">
 		<strong><?php echo __('admin.ElementSelecting');?>:</strong>

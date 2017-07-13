@@ -35,6 +35,10 @@ else{
 					);	
 }
 ?>
+<em>
+	<label for="selectedStudentNumber"><?php echo __('admin.selectedStudentNumber');?>:</label>
+	<?php echo $selected_number; ?></div>
+</em>
 </div>
 <div class=" form-group">
 	<strong><?php echo __('admin.Note');?>:</strong>

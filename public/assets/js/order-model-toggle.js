@@ -3,13 +3,13 @@ $(document).ready(function() {
 		var $obj=$('[data-id="order-model"]');
 		var $icon=$('[data-id="order-model-toggle"]');
 		if($obj.is(":visible")){
-			$icon.removeClass('fa fa-ellipsis-v');
-			$icon.addClass('fa fa-ellipsis-h');
+			$icon.removeClass('fa-chevron-down');
+			$icon.addClass('fa fa-chevron-right');
 			$obj.hide('fast');
 		}
 		else{
-			$icon.removeClass('fa fa-ellipsis-h');
-			$icon.addClass('fa fa-ellipsis-v');
+			$icon.removeClass('fa-chevron-right');
+			$icon.addClass('fa fa-chevron-down');
 			$obj.show('fast');
 		};
 	});
