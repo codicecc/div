@@ -36,7 +36,13 @@
 	<?php
 		Config::load('custom', true);
 		Config::load('navigation', true);
-	?>	
+	?>
+	<!-- Anchors and floating navigation bar -->
+	<script>
+		var shiftWindow = function() { scrollBy(0, -70) };
+		if (location.hash) shiftWindow();
+		window.addEventListener("hashchange", shiftWindow);
+	</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body>
