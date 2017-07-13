@@ -1,4 +1,4 @@
-          <div class="hero-unit anchor2" id="introduction">
+          <div class="hero-unit">
             <h2>Introduzione</h2>
             <p>L’applicazione gestisce ordini di vestiti prodotti “su misura”. I vestiti sono suddivisi in modelli. I modelli sono prodotti in taglie sulla base delle misure degli studenti.
 			</p>

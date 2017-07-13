@@ -252,9 +252,9 @@
 -->					
 				</div>
 				<!-- /.list-group -->
-<!--
-				<a href="#" class="btn btn-default btn-block">View All Alerts</a>
--->
+
+				<a href="/admin/help" class="btn btn-primary btn-block">Guida Online</a>
+
 			</div>
 			<!-- /.panel-body -->
 		</div>
