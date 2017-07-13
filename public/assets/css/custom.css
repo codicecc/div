@@ -3,4 +3,14 @@ fieldset p {margin: 10px 0;}
     border: 1px solid #eee;
     background: #fefefe;
 }
+.element_row{
+border-bottom:1px solid #ccc;
+}
+.detail_table td{
+border:1px solid #ccc;
+border-bottom:1px solid #ccc;
+padding-left:1rem;
+padding-right:1rem;
+}
+.order-model-toggle{cursor:pointer;}
 

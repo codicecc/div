@@ -10,7 +10,7 @@
 	<a target="_blank" href="/admin/model/view/<?php echo $order->model->id;?>">
 		<i class="fa fa-external-link fa-fw"></i>
 	</a>
-
+	<?php echo render('admin/model/include_view', array('readonly' => 1,'model' => $order->model));?>
 </div>
 
 <div class=" form-group">

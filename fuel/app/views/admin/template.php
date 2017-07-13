@@ -27,6 +27,7 @@
 		'attributeItem.js',
 		'orderStudentList.js',
 		'modal.js',
+		'order-model-toggle.js',
 		//'custom.js',
 	)); ?>
 	<script>
