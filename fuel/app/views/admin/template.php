@@ -48,15 +48,7 @@
 				<a class="navbar-brand" href="/admin/"><i class="fa fa-dashboard fa-fw"></i> <?php echo Config::get('project_name');?></a>
 			</div>
 			<div class="navbar-collapse collapse">
-			<?php
-			
-			//\Cache::delete_all();
-			
-			/**
-			** 1705191311 ***
-			** 1. Verifica la corretta posizione di questo array, su due piedi ritengo nel file config
-			** 2. Verifica permessi
-			**/				
+			<?php			
 
 			echo Helper::build_menu(Config::get('navigation_bar'));
 ?>
