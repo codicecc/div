@@ -6,7 +6,12 @@
 
 <div class=" form-group">
 	<strong><?php echo __('admin.Model');?>:</strong>
-	<?php echo $order->model->sku; ?></div>
+	<?php echo $order->model->sku; ?>
+	<a target="_blank" href="/admin/model/view/<?php echo $order->model->id;?>">
+		<i class="fa fa-external-link fa-fw"></i>
+	</a>
+
+</div>
 
 <div class=" form-group">
 	<strong><?php echo __('admin.School');?>:</strong>
@@ -37,6 +42,13 @@ else{
 
 <div class=" form-group">
 	<strong><?php echo __('admin.Closed');?>:</strong>
-	<?php echo $order->closed?__("admin.yes"):__("admin.no"); ?></div>
+	<?php echo $order->closed?
+	'<i class="fa  '.Config::get('custom.icons.close.icon').'
+					'.Config::get('custom.icons.close.size').'
+					'.Config::get('custom.icons.close.text-color').'"></i>':
+	'<i class="fa  '.Config::get('custom.icons.open.icon').'
+					'.Config::get('custom.icons.open.size').'
+					'.Config::get('custom.icons.open.text-color').'"></i>'; ?>
+</div>
 	
 <?php echo render('admin/order/_actions'); ?>	

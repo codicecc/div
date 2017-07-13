@@ -19,7 +19,14 @@
 			<td><?php echo $item->model->sku." <i>(".$item->model->name.")</i>"; ?></td>
 			<td><?php echo $item->school->name; ?></td>
 			<td><?php echo $item->note; ?></td>
-			<td><?php echo $item->closed?__("admin.yes"):__("admin.no"); ?></td>
+			<td><?php //echo $item->closed?__("admin.yes"):__("admin.no"); ?>
+				<?php echo $item->closed?
+					'<i class="fa  '.Config::get('custom.icons.close.icon').'
+						'.Config::get('custom.icons.close.size').'
+						'.Config::get('custom.icons.close.text-color').'"></i>':
+					'<i class="fa  '.Config::get('custom.icons.open.icon').'
+						'.Config::get('custom.icons.open.size').'
+						'.Config::get('custom.icons.open.text-color').'"></i>'; ?></td>
 			<td>
 				<?php
 					echo Utilities::adminActions(
