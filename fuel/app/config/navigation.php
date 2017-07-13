@@ -71,10 +71,18 @@ return array (
 					'text'   => 'Reports',
 					'rights' => 'Controller_Admin_Report.menu',
 					'sub' => array(
-						 '/admin/report' => array(
-								'text'   => 'Reports',
+						 '/admin/full' => array(
+								'text'   => 'FullCSV',
 								'rights' => 'Controller_Admin_Orders.index'
-						 )
+						 ),
+						 '/admin/filtred' => array(
+								'text'   => 'FiltredCSV',
+								'rights' => 'Controller_Admin_Orders.index'
+						 ),
+						 '/admin/report' => array(
+								'text'   => 'Box',
+								'rights' => 'Controller_Admin_Orders.index'
+						 ),
 					)
 			 ),
 			 '/admin/users' => array(

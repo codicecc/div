@@ -141,6 +141,9 @@ return array(
     'New-Password-is' => 'La nuova password è',
     'Assigned-new-Password' => 'Assigned new password',
     'This-request-is-not-correct' => 'Richiesta non corretta',
+    'FiltredCSV' => 'Parti del corpo',
+    'FullCSV' => 'Completo',
+    'Box' => 'Box',
     'V' => 'Modifica',
 
     'admin' => array('key1' => 'variable1')
