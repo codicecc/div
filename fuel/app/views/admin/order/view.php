@@ -2,7 +2,8 @@
 
 <div class="form-group">
 	<strong><?php echo __('admin.Name');?>:</strong>
-	<?php echo $order->name; ?></div>
+	<?php echo $order->name; ?>
+</div>
 
 <div class=" form-group">
 	<strong><?php echo __('admin.Model');?>:</strong>
@@ -15,7 +16,9 @@
 
 <div class=" form-group">
 	<strong><?php echo __('admin.School');?>:</strong>
-	<?php echo $order->school->name; ?></div>
+	<?php echo $order->school->name; ?>
+</div>
+
 <div class="form-group">
 	<label for="students"><?php echo __('admin.StudentSelecting');?>:</label>
 <?php
@@ -39,10 +42,11 @@ else{
 	<label for="selectedStudentNumber"><?php echo __('admin.selectedStudentNumber');?>:</label>
 	<?php echo $selected_number; ?></div>
 </em>
-</div>
+
 <div class=" form-group">
 	<strong><?php echo __('admin.Note');?>:</strong>
-	<?php echo $order->note; ?></div>
+	<?php echo $order->note; ?>
+</div>
 
 <div class=" form-group">
 	<strong><?php echo __('admin.Closed');?>:</strong>
