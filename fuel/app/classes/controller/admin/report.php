@@ -90,7 +90,7 @@ class Controller_Admin_Report extends Controller_Admin
 			$field_array[]=$body_part->name;
 		}
 
-		$csv_data = Format::forge($data)->to_csv(null, ";", false, $field_array);
+		$csv_data = Format::forge($data)->to_csv(null, null, true, $field_array);
 		
 		$response = new Response($csv_data,200);
 		$response->set_header('Content-Type','application/csv');

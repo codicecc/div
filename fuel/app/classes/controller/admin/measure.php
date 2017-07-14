@@ -38,6 +38,7 @@ class Controller_Admin_Measure extends Controller_Admin{
 			return 123;
 		}
 		if(isset($a_file_content)){
+			
 			// Get first Column Label of CSV file
 			foreach($a_file_content[0] as $l2 => $v2){
 				$firstColumnLabel=$l2;
@@ -46,7 +47,7 @@ class Controller_Admin_Measure extends Controller_Admin{
 			$flashMsgERROR="";
 			$flashMsgOK="";
 			foreach($a_file_content as $label => $value){
-				// For every CSV row check if Student of a school selected, exists
+				// For every CSV's row check if Student of the school selected, exists
 				$result=Model_student::query()
 						->where('name','like',$value[$firstColumnLabel])
 						->where('school_id',Input::post('school_id'))
@@ -72,7 +73,7 @@ class Controller_Admin_Measure extends Controller_Admin{
 						$flashMsgOK.="<br />- ".$student->name . " - ".Model_School::find(Input::post('school_id'))->name;
 						// Create measure
 						foreach($value as $l => $v){
-							$body_part_id=\DB::select('id')->from('body_parts')->where('name', 'LIKE', $l)->execute()->get('id', '0');
+							$body_part_id=\DB::select('id')->from('body_parts')->where('name', 'LIKE', trim($l))->execute()->get('id', '0');
 							if($body_part_id>0){
 								$measure=new Model_measure();
 								$measure= Model_Measure::forge(array(
