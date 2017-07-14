@@ -80,6 +80,7 @@ return array(
     'Body_part' => 'Parte del corpo',
     'NoBody_parts' => 'Nulla qui',
     'ListingBody_parts' => 'Lista Parti del corpo',
+    'BodyPartSelecting' => 'Selezione Parti del corpo',
     'Body_partList' => 'Lista Parti del corpo',
     'EditingBody_part' => 'Modifica Parte del corpo',
     'NewBody_part' => 'Nuova Parte del corpo',

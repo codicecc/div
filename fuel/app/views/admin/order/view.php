@@ -40,8 +40,9 @@ else{
 ?>
 <em>
 	<label for="selectedStudentNumber"><?php echo __('admin.selectedStudentNumber');?>:</label>
-	<span data-id="selected_number"><?php echo $selected_number; ?></span></div>
+	<span data-id="selected_number"><?php echo $selected_number; ?></span>
 </em>
+</div>
 
 <div class=" form-group">
 	<strong><?php echo __('admin.Note');?>:</strong>
