@@ -6,18 +6,21 @@
 		<tr>
 			<th>id</th>			
 			<th><?php echo __('admin.Name');?></th>
+			<th><?php echo __('admin.Rank');?></th>
 			<th></th>
 		</tr>
 	</thead>
 	<tbody>
-<?php foreach ($body_parts as $item): ?>		<tr>
+	<?php foreach ($body_parts as $item): ?>		
+		<tr>
 			<td><?php echo $item->id; ?></td>
 			<td><?php echo $item->name; ?></td>
+			<td><?php echo $item->rank; ?></td>
 			<td>
 				<?php
 					echo Utilities::adminActions(
 						$item,
-						Request::active()->route->segments[2],
+						'body/part',
 						array(
 							array(__('admin.Edit'),'edit'),
 							array(__('admin.Delete'),'delete',
@@ -31,7 +34,8 @@
 
 			</td>
 		</tr>
-<?php endforeach; ?>	</tbody>
+	<?php endforeach; ?>
+	</tbody>
 </table>
 
 <?php else: ?>

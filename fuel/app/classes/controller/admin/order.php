@@ -73,6 +73,7 @@ class Controller_Admin_Order extends Controller_Admin
 		}
 		
 		$data['selected']=$aselected;
+		$data['selected_number']=count($data['selected']);
 		$data['student_selector']=1;
 		$this->template->title = "Order";
 		$this->template->content = View::forge('admin/order/view', $data);

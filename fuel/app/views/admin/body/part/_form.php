@@ -8,6 +8,12 @@
 
 		</div>
 		<div class="form-group">
+			<?php echo Form::label(__('admin.Rank'), 'rank', array('class'=>'control-label')); ?>
+
+				<?php echo Form::input('rank', Input::post('rank', isset($body_part) ? $body_part->rank : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>'Rank')); ?>
+
+		</div>
+		<div class="form-group">
 			<label class='control-label'>&nbsp;</label>
 			<?php echo Form::submit('submit', __('admin.Save'), array('class' => 'btn btn-primary')); ?>		</div>
 	</fieldset>

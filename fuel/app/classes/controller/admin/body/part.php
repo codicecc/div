@@ -4,7 +4,8 @@ class Controller_Admin_Body_Part extends Controller_Admin
 
 	public function action_index()
 	{
-		$data['body_parts'] = Model_Body_Part::find('all');
+		$data['body_parts'] = Model_Body_Part::find('all', array('order_by' => array('rank' => 'asc')));
+				
 		$this->template->title = "Body_parts";
 		$this->template->content = View::forge('admin/body/part/index', $data);
 
@@ -29,6 +30,7 @@ class Controller_Admin_Body_Part extends Controller_Admin
 			{
 				$body_part = Model_Body_Part::forge(array(
 					'name' => Input::post('name'),
+					'rank' => Input::post('rank'),
 				));
 
 				if ($body_part and $body_part->save())
@@ -62,6 +64,7 @@ class Controller_Admin_Body_Part extends Controller_Admin
 		if ($val->run())
 		{
 			$body_part->name = Input::post('name');
+			$body_part->rank = Input::post('rank');
 
 			if ($body_part->save())
 			{
@@ -81,6 +84,7 @@ class Controller_Admin_Body_Part extends Controller_Admin
 			if (Input::method() == 'POST')
 			{
 				$body_part->name = $val->validated('name');
+				$body_part->rank = $val->validated('rank');
 
 				Session::set_flash('error', $val->error());
 			}

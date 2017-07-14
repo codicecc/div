@@ -6,6 +6,7 @@ class Model_Body_Part extends \Orm\Model{
 	protected static $_properties = array(
 		'id',
 		'name',
+		'rank',
 		'created_at',
 		'updated_at',
 	);
@@ -25,6 +26,7 @@ class Model_Body_Part extends \Orm\Model{
 	{
 		$val = Validation::forge($factory);
 		$val->add_field('name', 'Name', 'required|max_length[255]');
+		$val->add_field('rank', 'Rank', 'required|valid_string[numeric]');
 
 		return $val;
 	}

@@ -83,6 +83,7 @@ return array(
     'Body_partList' => 'Lista Parti del corpo',
     'EditingBody_part' => 'Modifica Parte del corpo',
     'NewBody_part' => 'Nuova Parte del corpo',
+    'Rank' => 'Ordinamento',
     
     'School' => 'Scuola',
     'Schools' => 'Scuole',
@@ -141,10 +142,11 @@ return array(
     'New-Password-is' => 'La nuova password è',
     'Assigned-new-Password' => 'Assigned new password',
     'This-request-is-not-correct' => 'Richiesta non corretta',
-    'FiltredCSV' => 'Parti del corpo',
-    'FullCSV' => 'Completo',
+    'Filter' => 'Selezione',
+    'Full' => 'Completo',
     'Box' => 'Box',
-    'V' => 'Modifica',
+    'Get' => 'Elabora',
+	'V' => 'Modifica',
 
     'admin' => array('key1' => 'variable1')
 );
