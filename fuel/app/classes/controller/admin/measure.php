@@ -78,7 +78,7 @@ class Controller_Admin_Measure extends Controller_Admin{
 								$measure= Model_Measure::forge(array(
 									'student_id' => $student->id,
 									'body_part_id' => $body_part_id,
-									'value' => $v,
+									'value' => str_replace(",",".",$v),
 									'note' => 'Created by CSV'.date('ymdis'),
 								));
 								$measure->save();
