@@ -37,7 +37,7 @@ class Controller_Admin_Report extends Controller_Admin
 		$order=Model_Order::find($order_id);
 		$school_name=$order->school->name;
 		$model_name=$order->model->name;
-		
+				
 		$filename="Ordine - ".$model_name. " - ".$school_name;
 		$query="
 			SELECT id, model_id, student_id FROM `models_students`
@@ -66,7 +66,7 @@ class Controller_Admin_Report extends Controller_Admin
 			$measures = DB::query($query)
 			->execute()
 			->as_array();
-			
+						
 			$students=Model_Student::find('all', array(
 					'where' => array('id' => $model_student->student_id),
 				));
@@ -76,43 +76,23 @@ class Controller_Admin_Report extends Controller_Admin
 			}
 			$data0=array($student_name);
 			
-		//	debug::dump($measures);
 			$str="";
 			foreach($measures as $measure){
 				$data0[$measure["body_part"]]= $measure["value"];
-//				$str.=''.$measure["body_part"].' => '.$measure["value"].',';
 			}
-			//$data0=array($str);
-			array_push($data, $data0);			
+			array_push($data, $data0);
+			$data0=array();
 		}
 		
-/*
-  		debug::dump($data);
-		die();
-
-		
-		$array=array(
-			array(
-				"id" => "131",
-				"model_id" => "131",
-				"student_id" => "131",
-			),
-			array(
-				"id" => "131",
-				"model_id" => "131",
-				"student_id" => "131",
-			),
-		);
-*/
 		$field_array=array('Nome e Cognome');
 		$body_parts=Model_Body_Part::find('all', array('order_by' => array('rank' => 'asc')));
 		foreach($body_parts as $body_part){
 			$field_array[]=$body_part->name;
 		}
 
-		$data = Format::forge($data)->to_csv(null, ";", false, $field_array);
+		$csv_data = Format::forge($data)->to_csv(null, ";", false, $field_array);
 		
-		$response = new Response($data,200);
+		$response = new Response($csv_data,200);
 		$response->set_header('Content-Type','application/csv');
 		$response->set_header('Content-Disposition','attachment; filename="'.$filename.'-'.date('YmdHi').'.csv"');
 		$response->set_header('Cache-Control','no-cache, no-store, max-age=0, must-revalidate');

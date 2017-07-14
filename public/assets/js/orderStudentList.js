@@ -14,6 +14,8 @@ $(document).ready(function() {
 		console.log($studentList.data('order_id'));
 		console.log($studentList.data($studentListSelected.length));
 		*/
+		
+		$('[data-id="selected_number"]').text($studentListSelected.length);
 		if($studentListSelected.length>0){
 			$.post(
 				uriBase + 'admin/model/student/update_student_list', {
