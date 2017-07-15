@@ -1,9 +1,9 @@
 <h2><?php echo __('admin.ListingMeasures');?></h2>
 <br>
-<div class="col-xs-4">
+<div class="col-xs-4 noprint">
 	<?php echo render('admin/measure/_processCSVFile'); ?>
 </div>
-<div class="col-xs-4">
+<div class="col-xs-4 noprint">
 	<?php echo render('admin/measure/_studentFinder'); ?>
 </div>
 <?php if ($measures): ?>
