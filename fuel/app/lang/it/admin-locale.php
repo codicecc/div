@@ -1,5 +1,6 @@
 <?php
 return array(
+	'Print' => 'Stampa',
 	'Clone' => 'Duplica',
 	'Details' => 'Dettagli',
 	'Reset' => 'Reset',
@@ -107,7 +108,7 @@ return array(
 	'Element' => 'Elemento',
 	'Detail' => 'Dettaglio',
 	'Dress' => 'Scheda Vestito',
-    'Reports' => 'Stampe',
+    'Reports' => 'Report',
     'Closed' => 'Chiuso',
     'yes' => 'si',
     'no' => 'no',

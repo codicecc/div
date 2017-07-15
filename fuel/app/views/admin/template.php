@@ -6,6 +6,7 @@
 	<?php echo Asset::css(array(
 		'bootstrap.css',
 		'custom.css',
+		'print.css',
 		'font-awesome.min.css',
 		'sb-admin-2.min.css',
 		'modal.css',
@@ -29,6 +30,7 @@
 		'modal.js',
 		'order-model-toggle.js',
 		'custom.js',
+		'print.js',
 	)); ?>
 	<script>
 		$(function(){ $('.topbar').dropdown(); });
@@ -64,6 +66,15 @@
 			echo Helper::build_menu(Config::get('navigation.navigation_bar'));
 ?>
 			<ul class="nav navbar-nav pull-right">
+					<li>
+					<a href="#"
+						title="<?php echo __('admin.Print');?>"
+						data-toggle="print"
+						data-target="#print">
+						<span class="glyphicon glyphicon-print"></span>
+						<?php //echo __('admin.Print');?>
+						</a>
+					</li>
 					<li class="dropdown">
 						<a data-toggle="dropdown" class="dropdown-toggle" href="#"><?php echo $current_user->username ?> <b class="caret"></b></a>
 						<ul class="dropdown-menu">
