@@ -1,4 +1,4 @@
-<?php
+	<?php
 class utilities{
 	static function trim2($str) {
 	   return str_replace(" ","",$str);
@@ -51,9 +51,8 @@ class utilities{
   static function agrouplabel(){		
 		// generate grouplabel array
 		$grouplabel=array();
-		foreach(Auth::group('Simplegroup')->groups() as $label => $value):
-			//Debug::dump($value);
-			array_push($grouplabel,array($value=>Auth::group('Simplegroup')->get_name($value)));
+			foreach(Auth::group('Simplegroup')->groups() as $label => $value):
+			$grouplabel[$value]=Auth::group('Simplegroup')->get_name($value);
 		endforeach;
 		return $grouplabel;
 	}

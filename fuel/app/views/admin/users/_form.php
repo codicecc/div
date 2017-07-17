@@ -12,8 +12,9 @@
 						array('class' => 'col-md-4 form-control', 'placeholder'=>'Password')); ?></div>
 		<?php endif;?>
 		<div class="form-group">
+			<?php //debug::dump($user->group);?>
 			<?php echo Form::label('Group', 'group', array('class'=>'control-label')); ?>
-				<?php echo Form::select('group', Input::post('grop', isset($user) ? $user->group : ''), 
+				<?php echo Form::select('group', Input::post('group', isset($user) ? $user->group : ''), 
 					$grouplabel,
 					array('class' => 'col-md-4 form-control', 'placeholder'=>'Group')); ?></div>
 		<div class="form-group">
