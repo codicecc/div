@@ -1,4 +1,5 @@
 <div class="row">
+	<?php if(Auth::has_access('Controller_Admin_Order.index')):?>	
 	<div class="col-lg-4 col-md-6">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
@@ -21,6 +22,8 @@
 			</a>
 		</div>
 	</div>
+	<?php endif;?>
+	<?php if(Auth::has_access('Controller_Admin_Model.index')):?>	
 	<div class="col-lg-4 col-md-6">
 		<div class="panel panel-yellow">
 			<div class="panel-heading">
@@ -43,6 +46,8 @@
 			</a>
 		</div>
 	</div>
+	<?php endif;?>
+	<?php if(Auth::has_access('Controller_Admin_Detail.index')):?>	
 	<div class="col-lg-4 col-md-6">
 		<div class="panel panel-green">
 			<div class="panel-heading">
@@ -65,4 +70,5 @@
 			</a>
 		</div>
 	</div>
+	<?php endif;?>
 </div>

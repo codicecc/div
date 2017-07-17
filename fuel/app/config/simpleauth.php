@@ -88,7 +88,7 @@ return array(
       2 => array('name' => 'adminAreaAccess', 'roles' => array('adminareaaccess')),	//SUBSCRIBER
       10 => array('name' => 'Subscriber', 'roles' => array('subscriber','adminareaaccess')),	//SUBSCRIBER
       20 => array('name' => 'Editor', 'roles' => array('subscriber','editor','adminareaaccess')),	//EDITOR
-      30 => array('name' => 'Manager', 'roles' => array('manager','adminareaaccess')),	//MANAGER
+      30 => array('name' => 'Manager', 'roles' => array('manager','editor','adminareaaccess')),	//MANAGER
       100  => array('name' => 'Admin', 'roles' => array('editor', 'manager', 'admin')),
 	),
 

@@ -5,6 +5,7 @@
 			<!-- /.panel-heading -->
 			<div class="panel-body">
 				<div class="list-group">
+					<?php if(Auth::has_access('Controller_Admin_Order.index')):?>	
 					<a href="/admin/order/" class="list-group-item">
 						<i class="fa fa-shopping-cart fa-fw"></i> Ordini Totali
 						<span class="pull-right text-muted small"><em><?php echo Helper::count("orders")?></em>
@@ -26,6 +27,7 @@
 								<em><?php echo Helper::count("orders",array('closed'=>'1'))?></em>
 						</span>
 					</a>
+					<?php endif;?>
 <!--
 					<a href="#" class="list-group-item">
 						<i class="fa fa-twitter fa-fw"></i> 3 New Followers
@@ -70,9 +72,9 @@
 -->					
 				</div>
 				<!-- /.list-group -->
-
+				<?php if(Auth::has_access('Controller_Admin_Help.index')):?>
 				<a href="/admin/help" class="btn btn-primary btn-block">Guida Online</a>
-
+				<?php endif;?>
 			</div>
 			<!-- /.panel-body -->
 		</div>
