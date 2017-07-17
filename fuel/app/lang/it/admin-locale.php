@@ -29,6 +29,8 @@ return array(
     'BrowseForCSVFile' => 'Carica da file CSV',
     'Process' => 'Elabora File',
     'processCSVFile' => 'Carica i dati da un CSV,<br />seleziona la scuola di appartenenza<br /> e quindi il file.',
+    'loadCSVFile' => 'Carica dati da CSV',
+	'makeReport' => 'Elabora un report',
 
     'Student' => 'Studente',
     'Students' => 'Studenti',
