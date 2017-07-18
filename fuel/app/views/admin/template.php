@@ -21,7 +21,7 @@
 	?>
 	</script>
 	<?php echo Asset::js(array(
-		'http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js',
+		'https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js',
 		'bootstrap.js',
 		'elementList.js',
 		'detailList.js',
@@ -119,7 +119,7 @@
 		<footer class="noprint">
 			<p class="pull-right">Page rendered in {exec_time}s using {mem_usage}mb of memory.</p>
 			<p>
-			<a href="http://www.francescodattolo.it/" target="_blank">
+			<a href="https://www.francescodattolo.it/" target="_blank">
 			<?php echo Asset::img('francescodattolo_favicon.png', array('id' => 'francescodattolofavicon','title'=>'Visibilità sul Web - Francescodattolo.it'));?></a>
 			<a href="http://www.codice.cc/" target="_blank">
 			<?php echo Asset::img('codice_favicon.png', array('id' => 'codicefavicon','title'=>'Web Developer Blog - Codice.Cc'));?></a>
