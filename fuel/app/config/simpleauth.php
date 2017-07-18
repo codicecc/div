@@ -109,8 +109,70 @@ return array(
 			),		
 		),
 		'editor' => array(
-			'Controller_Admin_Info' => array(
+			'Controller_Admin_Users' => array(
+				'changepassword',
+			),
+			'Controller_Admin_Measure' => array(
+				'menu',
 				'index',
+			),
+			'Controller_Admin_School' => array(
+				'index',
+				'menu',
+				'edit',
+			),
+			'Controller_Admin_Student' => array(
+				'menu',
+				'index',
+				'edit',
+			),
+			'Controller_Admin_Body_Part' => array(
+				'menu',
+				'index',
+				'edit',
+			),
+			'Controller_Admin_Size' => array(
+				'menu',				
+				'index',
+				'edit',
+			),
+			'Controller_Admin_Model' => array(
+				'menu',
+				'index',
+				'create',
+				'edit',
+				'elements',
+				'change_detail_status',
+				'change_element_status',
+				'clone',
+			),
+			'Controller_Admin_Detail' => array(
+				'index',
+				'menu',
+				'create',
+				'edit',
+			),
+			'Controller_Admin_Element' => array(
+				'index',
+				'menu',
+				'create',
+				'edit',
+			),
+			'Controller_Admin_Attribute' => array(
+				'save',
+			),
+			'Controller_Admin_Report' => array(
+				'index',
+				'menu',
+				'full',
+				'filter',
+				'getcsv',
+			),
+			'Controller_Admin_Order' => array(
+				'index',
+				'menu',
+				'edit',
+				'students',
 			),
 		),
 		'manager' => array(
@@ -146,10 +208,6 @@ return array(
 				'menu',
 				'create',
 				'edit',
-			),
-			'Controller_Admin_Model' => array(
-				'index',
-				'menu',
 			),
 			'Controller_Admin_Model' => array(
 				'index',
