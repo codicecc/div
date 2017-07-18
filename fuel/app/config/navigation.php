@@ -15,7 +15,7 @@ return array (
 	'navigation_bar' => array(
 			 'measures' => array(
 					'text'   => 'Measures',
-					'rights' => 'Controller_Admin_Measures.menu',
+					'rights' => 'Controller_Admin_Measure.menu',
 					'sub' => array(
 						 '/admin/school' => array(
 								'text'   => 'School',
@@ -63,7 +63,7 @@ return array (
 					'sub' => array(
 						 '/admin/order' => array(
 								'text'   => 'Order',
-								'rights' => 'Controller_Admin_Orders.index'
+								'rights' => 'Controller_Admin_Order.index'
 						 ),
 					)
 			 ),
@@ -73,11 +73,11 @@ return array (
 					'sub' => array(
 						 '/admin/report/full' => array(
 								'text'   => 'Full',
-								'rights' => 'Controller_Admin_Orders.index'
+								'rights' => 'Controller_Admin_Order.index'
 						 ),
 						 '/admin/report/filter' => array(
 								'text'   => 'Filter',
-								'rights' => 'Controller_Admin_Orders.index'
+								'rights' => 'Controller_Admin_Order.index'
 						 ),
 						 '/admin/report/box' => array(
 								'text'   => 'Box',

@@ -1,11 +1,15 @@
 <h2><?php echo __('admin.ListingMeasures');?></h2>
-<br>
+<?php if(Auth::has_access('Controller_Admin_Measure.upload')):?>
 <div class="col-xs-4 noprint">
 	<?php echo render('admin/measure/_processCSVFile'); ?>
 </div>
+<?php endif;?>
+<?php if(Auth::has_access('Controller_Admin_Measure.index')):?>
 <div class="col-xs-4 noprint">
 	<?php echo render('admin/measure/_studentFinder'); ?>
 </div>
+<?php endif;?>
+
 <?php if ($measures): ?>
 <table class="table table-striped">
 	<thead>

@@ -87,9 +87,9 @@ return array(
       0 => array('name' => 'Generic', 'roles' => array('generic')),
       2 => array('name' => 'adminAreaAccess', 'roles' => array('adminareaaccess')),	//SUBSCRIBER
       10 => array('name' => 'Subscriber', 'roles' => array('subscriber','adminareaaccess')),	//SUBSCRIBER
-      20 => array('name' => 'Editor', 'roles' => array('subscriber','editor','adminareaaccess')),	//EDITOR
-      30 => array('name' => 'Manager', 'roles' => array('manager','editor','adminareaaccess')),	//MANAGER
-      100  => array('name' => 'Admin', 'roles' => array('editor', 'manager', 'admin')),
+      20 => array('name' => 'Editor', 'roles' => array('editor','subscriber','adminareaaccess')),	//EDITOR
+      30 => array('name' => 'Manager', 'roles' => array('manager', 'editor','subscriber','adminareaaccess')),	//MANAGER
+      100  => array('name' => 'Admin', 'roles' => array('admin', 'manager', 'editor')),
 	),
 
 	'roles' => array(
@@ -114,84 +114,86 @@ return array(
 			),
 		),
 		'manager' => array(
-		),
-		/*
-	 	 'scan' => array(
-			'Controller_Admin' => array('index'),
 			'Controller_Admin_Users' => array(
-				'viewprofile',
+				'changepassword',
 			),
-			'Controller_Admin_Scans' => array(
+			'Controller_Admin_Measure' => array(
+				'menu',
+				'edit',
 				'index',
+				'upload',
+			),
+			'Controller_Admin_School' => array(
+				'index',
+				'menu',
 				'create',
-				'read',
+				'edit',
 			),
-		),
-		 'partner' => array(
-			'Controller_Admin' => array('index'),
-			'Controller_Admin_Users' => array(
-				'viewprofile',
-			),
-			'Controller_Admin_Quantities' => array(
+			'Controller_Admin_Student' => array(
 				'index',
+				'menu',
+				'create',
+				'edit',
+			),
+			'Controller_Admin_Body_Part' => array(
+				'index',
+				'menu',
+				'create',
+				'edit',
+			),
+			'Controller_Admin_Size' => array(
+				'index',
+				'menu',
+				'create',
+				'edit',
+			),
+			'Controller_Admin_Model' => array(
+				'index',
+				'menu',
+			),
+			'Controller_Admin_Model' => array(
+				'index',
+				'menu',
+				'create',
+				'edit',
+				'elements',
+				'change_detail_status',
+				'change_element_status',
+				'clone',
+				'delete',
+			),
+			'Controller_Admin_Detail' => array(
+				'index',
+				'menu',
+				'create',
+				'edit',
+				'delete',
+			),
+			'Controller_Admin_Element' => array(
+				'index',
+				'menu',
+				'create',
+				'edit',
+				'delete',
+			),
+			'Controller_Admin_Attribute' => array(
+				'save',
+			),
+			'Controller_Admin_Report' => array(
+				'index',
+				'menu',
+				'full',
+				'filter',
 				'getcsv',
 			),
+			'Controller_Admin_Order' => array(
+				'index',
+				'menu',
+				'create',
+				'edit',
+				'students',
+			),
 		),
-		 'operator'  => array(
-		 	 'Controller_Admin' => array('index'),
-				'Controller_Admin_Users' => array(
-					'viewprofile',
-					'index',
-				), 	 
-		 	 'Controller_Admin_Codes' => array(
-		 	 	 'index',
-		 	 	 'view',
-		 	 	 'getcsv',
-		 	 	 'qrcode',
-		 	 	 'findingbyname',
-		 	 	 'create',
-		 	 	 'edit'
-		 	 	),
-		 	'Controller_Admin_Quantities' => array('super' => true),
-			'Controller_Admin_Scans' => array(
-				'index',
-				'view',
-				'find',
-				'create',
-				'edit'
-			),
-			'Controller_Admin_Stores' => array(
-				'index',
-				'create',
-				'view',
-				'read',
-				'edit'
-			),
-			'Controller_Admin_Tools' => array(
-				'index',
-				'mageCheck_ecommerce_magazzino'
-			),
-			'Controller_Admin_Codesource' => array(
-				'index',
-			),
-			'Controller_Admin_Codenew' => array(
-				'index',
-			),
-			'Controller_Admin_Codeoem' => array(
-				'index',
-				'create',
-				'view',
-				'delete',
-				'edit'				
-			),
-			'Controller_Admin_Codecompetitor' => array(
-				'index',
-				'create',
-				'view',
-				'delete',
-				'edit'				
-			),
-		),*/
 	),
 	
 	/**
