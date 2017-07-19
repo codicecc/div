@@ -14,6 +14,9 @@ class Create_elements
 			'updated_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
 
 		), array('id'));
+		//Adding UNIQUE constraint to 'name' column 
+		\DB::query("ALTER TABLE `elements` ADD UNIQUE( `name`)")->execute();
+
 	}
 
 	public function down()
