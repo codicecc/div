@@ -2,7 +2,6 @@
 class Controller_Admin_Model extends Controller_Admin{
 
 	public function action_test(){
-
 	}
 	
 	public function action_index()

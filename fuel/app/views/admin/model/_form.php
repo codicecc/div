@@ -3,7 +3,7 @@
 	<fieldset>
 		<div class="form-group">
 			<?php echo Form::label(__('admin.SKU'), 'sku', array('class'=>'control-label')); ?>
-			<?php echo Form::input('sku', Input::post('sku', isset($model) ? $model->sku : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>__('admin.SKU'))); ?>
+			<?php echo Form::input('sku', Input::post('sku', isset($model) ? $model->sku : "dv".intval(hmodel::get_model_last_id()+1000)), array('class' => 'col-md-4 form-control', 'placeholder'=>__('admin.SKU'))); ?>
 		</div>
 		<div class="form-group">
 			<?php echo Form::label(__('admin.Name'), 'name', array('class'=>'control-label')); ?>

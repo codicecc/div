@@ -1,5 +1,11 @@
 <?php
 class hmodel{
+	static function get_model_last_id(){
+		$model=Model_Model::find('last');
+		foreach($model as $l => $v){
+			if($l=="id")return $v;
+		}
+	}
 	static function get_attribute($model_id,$detail_id,$what="id") {
 		$Detail_Model=Model_Detail_Model::find('all',
 					array('where' => array(
